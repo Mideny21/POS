@@ -47,6 +47,14 @@
   						</p>
   					</a>
   				</li>
+  				<li class="nav-item">
+  					<a href="products" class="nav-link">
+  						<i class="fas fa-users"></i>
+  						<p>
+  					Product
+  						</p>
+  					</a>
+  				</li>
   				<li class="nav-item has-treeview">
   					<a href="#" class="nav-link">
   						<i class="nav-icon fas fa-copy"></i>

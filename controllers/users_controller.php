@@ -430,7 +430,7 @@ class ControllerUsers{
 					icon: "success",
 					}).then(function(result){
 					  	
-						if (result.value) {
+						if (result) {
 
 						window.location = "users";
 

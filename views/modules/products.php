@@ -1,10 +1,10 @@
 <div class="content-wrapper">
 
   <section class="content-header">
-    
+
     <h1>
 
-      Products
+      Product management
 
     </h1>
 
@@ -24,40 +24,278 @@
 
       <div class="box-header with-border">
 
-        <h3 class="box-title">Title</h3>
-
-        <div class="box-tools pull-right">
-
-          <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-
-            <i class="fa fa-minus"></i>
-
-          </button>
-
-          <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-
-            <i class="fa fa-times"></i>
-
-          </button>
-
-        </div>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#addProduct">Add Product</button>
 
       </div>
 
       <div class="box-body">
 
-        Start creating your amazing application!
+        <table class="table table-bordered table-striped dt-responsive tablesData" width="100%">
+
+          <thead>
+
+            <tr>
+
+              <th style="width:10px">#</th>
+              <th>Image</th>
+              <th>Code</th>
+              <th>Description</th>
+              <th>Stock</th>
+              <th>buying price</th>
+              <th>selling price</th>
+              <th>Date added</th>
+              <th>Category</th>
+              <th>Actions</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+            <?php
+            $item = null;
+            $value = null;
+
+            $products = ProductController::ctrShowProducts($item, $value);
+
+            // var_dump($products);
+            foreach ($products as $key => $value) {
+              echo '
+                <tr>
+              <td>' . ($key + 1) . '</td>
+              <td><img src="views/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8" width="40px"></td>
+              <td>' . $value["code"] . '</td>
+              <td>' . $value["description"] . '</td>
+              
+              
+            
+              <td>' . $value["stock"] . '</td>
+              <td>' . $value["buying_price"] . '</td>
+              <td>' . $value["selling_price"] . '</td>
+              <td>' . $value["date"] . '</td>';
+
+              $item = "id";
+              $value = $value['category_id'];
+
+              $category = ControllerCategories::ctrShowCategories($item, $value);
+
+              echo '<td>' . $category["category"] . '</td>
+              <td>
+                <div class="btn-group">
+                 <button class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                <button class="btn btn-danger"><i class="fas fa-times"></i></button>
+
+                </div>
+              </td>
+
+            </tr>
+              ';
+            }
+            ?>
+
+          </tbody>
+
+        </table>
 
       </div>
-  
-      <div class="box-footer">
 
-        Footer
-
-      </div>
-     
     </div>
 
   </section>
 
 </div>
+
+<!--=====================================
+=            module add Product            =
+======================================-->
+
+<!-- Modal -->
+<div id="addProduct" class="modal fade" role="dialog">
+
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+
+      <form role="form" method="POST" enctype="multipart/form-data">
+
+        <!--=====================================
+        HEADER
+        ======================================-->
+
+        <div class="modal-header" style="background: #3c8dbc">
+
+          <button type="button" style="color:#fff" class="close" data-dismiss="modal">&times;</button>
+
+          <h4 class="modal-title">Add Product</h4>
+
+        </div>
+
+        <!--=====================================
+        BODY
+        ======================================-->
+
+        <div class="modal-body">
+
+          <div class="box-body">
+
+
+
+            <!--Input Code -->
+            <div class="form-group">
+
+              <div class="input-group">
+
+                <span class="input-group-addon"><i class="fa fa-code"></i></span>
+
+                <input class="form-control input-lg" type="text" id="newCode" name="newCode" placeholder="Add Code" required readonly>
+
+              </div>
+
+            </div>
+
+            <!-- input category -->
+            <div class="form-group">
+
+              <div class="input-group">
+
+                <span class="input-group-addon"><i class="fa fa-th"></i></span>
+
+                <select class="form-control input-lg" id="newCategory" name="newCategory">
+
+                  <option value="">Select Category</option>
+
+
+
+                </select>
+
+              </div>
+
+            </div>
+
+            <!-- input description -->
+            <div class="form-group">
+
+              <div class="input-group">
+
+                <span class="input-group-addon"><i class="fa fa-product-hunt"></i></span>
+
+                <input class="form-control input-lg" type="text" id="newDescription" name="newDescription" placeholder="Add Description" required>
+
+              </div>
+
+            </div>
+
+            <!-- input Stock -->
+            <div class="form-group">
+
+              <div class="input-group">
+
+                <span class="input-group-addon"><i class="fa fa-check"></i></span>
+
+                <input class="form-control input-lg" type="number" id="newStock" name="newStock" placeholder="Add Stock" min="0" required>
+
+              </div>
+
+            </div>
+
+            <!-- INPUT BUYING PRICE -->
+            <div class="form-group row">
+
+              <div class="col-xs-12 col-sm-6">
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="fa fa-arrow-up"></i></span>
+
+                  <input type="number" class="form-control input-lg" id="newBuyingPrice" name="newBuyingPrice" step="any" min="0" placeholder="Buying price" required>
+
+                </div>
+
+              </div>
+
+              <!-- INPUT SELLING PRICE -->
+              <div class="col-xs-12 col-sm-6">
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="fa fa-arrow-down"></i></span>
+
+                  <input type="number" class="form-control input-lg" id="newSellingPrice" name="newSellingPrice" step="any" min="0" placeholder="Selling price" required>
+
+                </div>
+
+                <br>
+
+                <!-- CHECKBOX PERCENTAGE -->
+                <div class="col-xs-6">
+
+                  <div class="form-group">
+
+                    <label>
+
+                      <input type="checkbox" class="minimal percentage" checked>
+
+                      Use percentage
+
+                    </label>
+
+                  </div>
+
+                </div>
+
+                <!-- INPUT PERCENTAGE -->
+                <div class="col-xs-6" style="padding:0">
+
+                  <div class="input-group">
+
+                    <input type="number" class="form-control input-lg newPercentage" min="0" value="40" required>
+
+                    <span class="input-group-addon"><i class="fa fa-percent"></i></span>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- input image -->
+            <div class="form-group">
+
+              <div class="panel">Upload image</div>
+
+              <input id="newProdPhoto" type="file" class="newImage" name="newProdPhoto">
+
+              <p class="help-block">Maximum size 2Mb</p>
+
+              <img src="views/img/products/default/anonymous.png" class="img-thumbnail preview" alt="" width="100px">
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!--=====================================
+        FOOTER
+        ======================================-->
+
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+
+          <button type="submit" class="btn btn-primary">Save product</button>
+
+        </div>
+
+      </form>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+<!--====  End of module add Product  ====-->
