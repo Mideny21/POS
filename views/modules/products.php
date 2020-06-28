@@ -51,49 +51,7 @@
 
           </thead>
 
-          <tbody>
-            <?php
-            $item = null;
-            $value = null;
-
-            $products = ProductController::ctrShowProducts($item, $value);
-
-            // var_dump($products);
-            foreach ($products as $key => $value) {
-              echo '
-                <tr>
-              <td>' . ($key + 1) . '</td>
-              <td><img src="views/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8" width="40px"></td>
-              <td>' . $value["code"] . '</td>
-              <td>' . $value["description"] . '</td>
-              
-              
-            
-              <td>' . $value["stock"] . '</td>
-              <td>' . $value["buying_price"] . '</td>
-              <td>' . $value["selling_price"] . '</td>
-              <td>' . $value["date"] . '</td>';
-
-              $item = "id";
-              $value = $value['category_id'];
-
-              $category = ControllerCategories::ctrShowCategories($item, $value);
-
-              echo '<td>' . $category["category"] . '</td>
-              <td>
-                <div class="btn-group">
-                 <button class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                <button class="btn btn-danger"><i class="fas fa-times"></i></button>
-
-                </div>
-              </td>
-
-            </tr>
-              ';
-            }
-            ?>
-
-          </tbody>
+      
 
         </table>
 
