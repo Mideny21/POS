@@ -51,7 +51,7 @@
 
           </thead>
 
-      
+
 
         </table>
 
@@ -97,6 +97,35 @@
           <div class="box-body">
 
 
+            <!-- input category -->
+            <div class="form-group">
+
+              <div class="input-group">
+
+                <span class="input-group-addon"><i class="fa fa-th"></i></span>
+
+                <select class="form-control input-lg" id="newCategory" name="newCategory" required>
+
+                  <option value="">Select Category</option>
+                  <?php 
+                  
+                    $item = null;
+                    $value = null;
+
+
+                  $categories = ControllerCategories::ctrShowCategories($item, $value);
+
+                  foreach ($categories as $key => $value) {
+                    echo '<option value="'.$value["id"].'">'.$value['category'].'</option>';
+                  }
+                  ?>
+
+
+                </select>
+
+              </div>
+
+            </div>
 
             <!--Input Code -->
             <div class="form-group">
@@ -105,26 +134,7 @@
 
                 <span class="input-group-addon"><i class="fa fa-code"></i></span>
 
-                <input class="form-control input-lg" type="text" id="newCode" name="newCode" placeholder="Add Code" required readonly>
-
-              </div>
-
-            </div>
-
-            <!-- input category -->
-            <div class="form-group">
-
-              <div class="input-group">
-
-                <span class="input-group-addon"><i class="fa fa-th"></i></span>
-
-                <select class="form-control input-lg" id="newCategory" name="newCategory">
-
-                  <option value="">Select Category</option>
-
-
-
-                </select>
+                <input class="form-control input-lg" type="text"  id="newCode" name="newCode" placeholder="Add Code" required readonly>
 
               </div>
 
