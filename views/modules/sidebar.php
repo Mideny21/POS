@@ -10,10 +10,21 @@
   		<!-- Sidebar user panel (optional) -->
   		<div class="user-panel mt-3 pb-3 mb-3 d-flex">
   			<div class="image">
-  				<img src="views/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+  				<?php
+
+					if ($_SESSION["photo"] != "") {
+
+						echo '<img src="' . $_SESSION["photo"] . '"class="img-circle">';
+					} else {
+
+						echo '<img src="views/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">';
+					}
+
+					?>
+
   			</div>
   			<div class="info">
-  				<a href="home" class="d-block">Alexander Pierce</a>
+  				<a href="home" class="d-block"><?php echo $_SESSION["name"]; ?></a>
   			</div>
   		</div>
 
@@ -51,7 +62,7 @@
   					<a href="products" class="nav-link">
   						<i class="fas fa-users"></i>
   						<p>
-  					Product
+  							Product
   						</p>
   					</a>
   				</li>

@@ -22,14 +22,14 @@ $(document).on("change", ".newPics", function () {
 			confirmButtonText: "Close"
 		});
 
-	}else if(newImage["size"] > 2000000){
+	}else if(newImage["size"] > 10000000){
 
 		$(".newPics").val("");
 
 		swal({
-			type: "error",
+			icon: "error",
 			title: "Error uploading image",
-			text: "¡Image too big. It has to be less than 2Mb!",
+			text: "¡Image too big. It has to be less than 10Mb!",
 			showConfirmButton: true,
 			confirmButtonText: "Close"
 		});

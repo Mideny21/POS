@@ -171,7 +171,7 @@ class ControllerUsers{
 						
 						swal({
 							title: "Good job!",
-							text: "You clicked the button!",
+							text: "You have successfully created a user",
 							icon: "success",
 						}).then(function(result){
 

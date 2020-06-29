@@ -80,12 +80,11 @@
         HEADER
         ======================================-->
 
-        <div class="modal-header" style="background: #3c8dbc">
-
-          <button type="button" style="color:#fff" class="close" data-dismiss="modal">&times;</button>
-
-          <h4 class="modal-title">Add Product</h4>
-
+        <div class="modal-header" style="background:#3c8dbc">
+          <h5 class="modal-title" style="color:#fff" id="exampleModalLabel">Add Product</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
 
         <!--=====================================
@@ -101,22 +100,25 @@
             <div class="form-group">
 
               <div class="input-group">
-
-                <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-th"></span>
+                  </div>
+                </div>
 
                 <select class="form-control input-lg" id="newCategory" name="newCategory" required>
 
                   <option value="">Select Category</option>
-                  <?php 
-                  
-                    $item = null;
-                    $value = null;
+                  <?php
+
+                  $item = null;
+                  $value = null;
 
 
                   $categories = ControllerCategories::ctrShowCategories($item, $value);
 
                   foreach ($categories as $key => $value) {
-                    echo '<option value="'.$value["id"].'">'.$value['category'].'</option>';
+                    echo '<option value="' . $value["id"] . '">' . $value['category'] . '</option>';
                   }
                   ?>
 
@@ -131,10 +133,13 @@
             <div class="form-group">
 
               <div class="input-group">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-code"></span>
+                  </div>
+                </div>
 
-                <span class="input-group-addon"><i class="fa fa-code"></i></span>
-
-                <input class="form-control input-lg" type="text"  id="newCode" name="newCode" placeholder="Add Code" required readonly>
+                <input class="form-control input-lg" type="text" id="newCode" name="newCode" placeholder="Add Code" required readonly>
 
               </div>
 
@@ -144,8 +149,12 @@
             <div class="form-group">
 
               <div class="input-group">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-th"></span>
+                  </div>
+                </div>
 
-                <span class="input-group-addon"><i class="fa fa-product-hunt"></i></span>
 
                 <input class="form-control input-lg" type="text" id="newDescription" name="newDescription" placeholder="Add Description" required>
 
@@ -157,8 +166,11 @@
             <div class="form-group">
 
               <div class="input-group">
-
-                <span class="input-group-addon"><i class="fa fa-check"></i></span>
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-check"></span>
+                  </div>
+                </div>
 
                 <input class="form-control input-lg" type="number" id="newStock" name="newStock" placeholder="Add Stock" min="0" required>
 
@@ -173,8 +185,6 @@
 
                 <div class="input-group">
 
-                  <span class="input-group-addon"><i class="fa fa-arrow-up"></i></span>
-
                   <input type="number" class="form-control input-lg" id="newBuyingPrice" name="newBuyingPrice" step="any" min="0" placeholder="Buying price" required>
 
                 </div>
@@ -186,7 +196,6 @@
 
                 <div class="input-group">
 
-                  <span class="input-group-addon"><i class="fa fa-arrow-down"></i></span>
 
                   <input type="number" class="form-control input-lg" id="newSellingPrice" name="newSellingPrice" step="any" min="0" placeholder="Selling price" required>
 
@@ -258,7 +267,10 @@
         </div>
 
       </form>
-
+      <?php
+      $CreateProduct = new ProductController();
+      $CreateProduct->ctrCreateProduct();
+      ?>
 
     </div>
 
