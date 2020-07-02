@@ -1,16 +1,20 @@
 <div id="back"></div>
 
+<div class="login-page">
+
+
 <div class="login-box">
 
   <div class="login-logo">
 
-    <img class="img-responsive" src="views/img/template/logo-blanco-bloque.png" style="padding: 30px 100px 0 100px">
+  <a href="#"><b>Traik</b>company</a>
 
   </div>
+</div>
 
-  <div class="login-box-body">
-
-    <p class="login-box-msg">Sign in to start your session</p>
+  <div class="card">
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">Sign in to start your session</p>
 
     <form method="post">
 
@@ -50,5 +54,11 @@
     </form>
 
   </div>
+</div>
+</div>
 
 </div>
+
+
+
+

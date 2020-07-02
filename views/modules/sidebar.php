@@ -66,6 +66,14 @@
   						</p>
   					</a>
   				</li>
+				  <li class="nav-item">
+  					<a href="customers" class="nav-link">
+  						<i class="fas fa-users"></i>
+  						<p>
+  							Customers
+  						</p>
+  					</a>
+  				</li>
   				<li class="nav-item has-treeview">
   					<a href="#" class="nav-link">
   						<i class="nav-icon fas fa-copy"></i>

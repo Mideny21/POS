@@ -134,7 +134,7 @@ $(document).on("click", ".btnActivate", function(){
 				confirmButtonText: "Close"	
 			}).then(function(result) {
 
-				if (result.value) {
+				if (result) {
 					window.location = "users";
 				}
 
@@ -214,6 +214,7 @@ $(document).on("click", ".btnDeleteUser", function(){
 	var userPhoto = $(this).attr("userPhoto");
 	var username = $(this).attr("username");
 
+	if(window.matchMedia("(max-width:767px)").matches){
 	swal({
 		 title: "Are you sure?",
 		 	text: "Once deleted, you will not be able to recover",
@@ -229,6 +230,8 @@ $(document).on("click", ".btnDeleteUser", function(){
 		}
 
 	});
+
+}
 
 });
 
