@@ -1,23 +1,24 @@
 <div class="content-wrapper">
 
-  <section class="content-header">
-
-    <h1>
-
-      Product management
-
-    </h1>
-
-    <!-- <ol class="breadcrumb">
-
-      <li><a href="home"><i class="fa fa-dashboard"></i> Home</a></li>
-
-      <li class="active">Dashboard</li>
-
-    </ol> -->
-
-  </section>
-
+  <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Products Management</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="logout">Logout</a></li>
+             
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <hr>
+    
   <section class="content">
 
     <div class="box">
@@ -279,3 +280,199 @@
 </div>
 
 <!--====  End of module add Product  ====-->
+
+<!--=====================================
+EDIT PRODUCT
+======================================-->
+
+<div id="modalEditProduct" class="modal fade" role="dialog">
+  
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+
+      <form role="form" method="post" enctype="multipart/form-data">
+
+        <!--=====================================
+        HEADER
+        ======================================-->
+
+        <div class="modal-header" style="background:#3c8dbc; color:white">
+
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+          <h4 class="modal-title">Edit product</h4>
+
+        </div>
+
+        <!--=====================================
+         BODY
+        ======================================-->
+
+        <div class="modal-body">
+
+          <div class="box-body">
+
+            <!-- Select Category -->
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+                <select class="form-control input-lg" name="editCategory" readonly required>
+                  
+                  <option id="editCategory"></option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+            <!-- INPUT FOR THE CODE -->          
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-code"></i></span> 
+
+                <input type="text" class="form-control input-lg" id="editCode" name="editCode" readonly required>
+
+              </div>
+
+            </div>
+
+            <!-- INPUT FOR THE DESCRIPTION -->
+             <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-product-hunt"></i></span> 
+
+                <input type="text" class="form-control input-lg" id="editDescription" name="editDescription" required>
+
+              </div>
+
+            </div>
+
+             <!-- INPUT FOR THE STOCK -->
+             <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-check"></i></span> 
+
+                <input type="number" class="form-control input-lg" id="editStock" name="editStock" min="0" required>
+
+              </div>
+
+            </div>
+
+             <!-- INPUT FOR BUYING PRICE -->
+             <div class="form-group row">
+
+                <div class="col-xs-12 col-sm-6">
+                
+                  <div class="input-group">
+                  
+                    <span class="input-group-addon"><i class="fa fa-arrow-up"></i></span> 
+
+                    <input type="number" class="form-control input-lg" id="editBuyingPrice" name="editBuyingPrice" step="any" min="0" required>
+
+                  </div>
+
+                </div>
+
+                <!-- INPUT FOR SELLING PRICE -->
+                <div class="col-xs-12 col-sm-6">
+                
+                  <div class="input-group">
+                  
+                    <span class="input-group-addon"><i class="fa fa-arrow-down"></i></span> 
+
+                    <input type="number" class="form-control input-lg" id="editSellingPrice" name="editSellingPrice" step="any" min="0" readonly required>
+
+                  </div>
+                
+                  <br>
+
+                  <!-- PERCENTAGE CHECKBOX -->
+                  <div class="col-xs-6">
+                    
+                    <div class="form-group">
+                      
+                      <label>
+                        
+                        <input type="checkbox" class="minimal percentage" checked>
+                        
+                        Use Percentage
+
+                      </label>
+
+                    </div>
+
+                  </div>
+
+                  <!-- INPUT FOR PORCENTAJE -->
+                  <div class="col-xs-6" style="padding:0">
+                    
+                    <div class="input-group">
+                      
+                      <input type="number" class="form-control input-lg newPercentage" min="0" value="40" required>
+
+                      <span class="input-group-addon"><i class="fa fa-percent"></i></span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+            </div>
+
+            <!-- INPUT TO UPLOAD IMAGE -->
+             <div class="form-group">
+              
+              <div class="panel">Upload Image</div>
+
+              <input type="file" class="newImage" name="editImage">
+
+              <p class="help-block">2MB max</p>
+
+              <img src="views/img/products/default/anonymous.png" class="img-thumbnail preview" width="100px">
+
+              <input type="hidden" name="currentImage" id="currentImage">
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!--=====================================
+        FOOTER
+        ======================================-->
+
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+
+          <button type="submit" class="btn btn-primary">Save changes</button>
+
+        </div>
+
+      </form>
+
+        <?php
+
+          $editProduct = new ProductController();
+          $editProduct -> ctrEditProduct();
+
+        ?>      
+
+    </div>
+
+  </div>
+
+</div>

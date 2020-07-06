@@ -151,6 +151,8 @@ session_start();
   <script src="views/dist/js/adminlte.js"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="views/dist/js/pages/dashboard.js"></script>
+  <!-- jQuery Number -->
+  <script src="views/plugins/jqueryNumber/jquerynumber.min.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="views/dist/js/demo.js"></script>
   <!-- DataTables -->
@@ -164,6 +166,8 @@ session_start();
   <script src="views/js/categories.js"></script>
   <script src="views/js/products.js"></script>
   <script src="views/js/customers.js"></script>
+  <script src="views/js/sales.js"></script>
+
 
 
   <script>

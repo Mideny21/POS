@@ -50,8 +50,8 @@ class ProductsTable{
       "'.$products[$i]["code"]. '",
       "' . $products[$i]["description"] . '",
       "' . $stock . '",
-      "' . $products[$i]["buying_price"] . '",
-      "' . $products[$i]["selling_price"] . '",
+      "' . number_format($products[$i]["buying_price"],2)  . '",
+      "' . number_format($products[$i]["selling_price"],2)  . '",
       "' . $products[$i]["date"] . '",
          "' . $category["category"] . '",
       "' . $button . '"

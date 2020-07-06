@@ -58,4 +58,87 @@ class ModelProducts{
         $stmt = null;
     }
 
+    	/*=============================================
+	EDITING PRODUCT
+	=============================================*/
+	static public function mdlEditProduct($table, $data){
+
+		$stmt = Connection::connect()->prepare("UPDATE $table SET category_id = :idCategory, description = :description, image = :image, stock = :stock, buying_price = :buyingPrice, selling_price = :sellingPrice WHERE code = :code");
+
+		$stmt->bindParam(":category_id", $data["idCategory"], PDO::PARAM_INT);
+		$stmt->bindParam(":code", $data["code"], PDO::PARAM_STR);
+		$stmt->bindParam(":description", $data["description"], PDO::PARAM_STR);
+		$stmt->bindParam(":image", $data["image"], PDO::PARAM_STR);
+		$stmt->bindParam(":stock", $data["stock"], PDO::PARAM_STR);
+		$stmt->bindParam(":buying_price", $data["buyingPrice"], PDO::PARAM_STR);
+		$stmt->bindParam(":selling_price", $data["sellingPrice"], PDO::PARAM_STR);
+
+		if($stmt->execute()){
+
+			return "ok";
+
+		}else{
+
+			return "error";
+		
+		}
+
+		$stmt->close();
+		$stmt = null;
+
+	}
+
+	/*=============================================
+	DELETING PRODUCT
+	=============================================*/
+
+	static public function mdlDeleteProduct($table, $data){
+
+		$stmt = Connection::connect()->prepare("DELETE FROM $table WHERE id = :id");
+
+		$stmt -> bindParam(":id", $data, PDO::PARAM_INT);
+
+		if($stmt -> execute()){
+
+			return "ok";
+		
+		}else{
+
+			return "error";	
+
+		}
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
+
+	/*=============================================
+	UPDATE PRODUCT
+	=============================================*/
+
+	static public function mdlUpdateProduct($table, $item1, $value1, $value){
+
+		$stmt = Connection::connect()->prepare("UPDATE $table SET $item1 = :$item1 WHERE id = :id");
+
+		$stmt -> bindParam(":".$item1, $value1, PDO::PARAM_STR);
+		$stmt -> bindParam(":id", $value, PDO::PARAM_STR);
+
+		if($stmt -> execute()){
+
+			return "ok";
+		
+		}else{
+
+			return "error";	
+
+		}
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
+
 }

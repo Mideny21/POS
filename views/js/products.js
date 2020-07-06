@@ -8,7 +8,7 @@ $('.tablesData').DataTable({
     "processing": true,
 });
 
-$('#newCategory').change(function(){
+$('#newCategory').change(function () {
     var idCategory = $(this).val();
 
     var data = new FormData();
@@ -16,24 +16,24 @@ $('#newCategory').change(function(){
 
     $.ajax({
 
-        url:"ajax/products_ajax.php",
-        method:"post",
-        data:data,
-        cache:false,
-        contentType:false,
-        processData:false,
-        dataType:"json",
-        success:function(response){
+        url: "ajax/products_ajax.php",
+        method: "post",
+        data: data,
+        cache: false,
+        contentType: false,
+        processData: false,
+        dataType: "json",
+        success: function (response) {
 
-            if(!response){
-                var newCode = idCategory+"01";
+            if (!response) {
+                var newCode = idCategory + "01";
                 $("#newCode").val(newCode);
-            }else{
+            } else {
                 var newCode = Number(response["code"]) + 1;
                 $("#newCode").val(newCode);
             }
 
-            
+
         }
     });
 });
@@ -46,12 +46,12 @@ $('#newBuyingPrice').change(function () {
 
         $('#newSellingPrice').val(percentage);
         $('#newSellingPrice').prop('readonly', true);
-        
+
     }
 });
 
 // WHEN THE PERCENTAGE CHANGES
-$('.newPercentage').change(function(){
+$('.newPercentage').change(function () {
     if ($('.percentage').prop('checked')) {
         var PercentageValue = $('.newPercentage').val();
         var percentage = Number(($('#newBuyingPrice').val() * PercentageValue / 100)) + Number($('#newBuyingPrice').val());
@@ -63,8 +63,8 @@ $('.newPercentage').change(function(){
 });
 
 //WHEN CHECKBOX IS OFF
-if($('.percentage').prop('checked',false)){
-     $('#newSellingPrice').prop('readonly', false);
+if ($('.percentage').prop('checked', false)) {
+    $('#newSellingPrice').prop('readonly', false);
 }
 
 /*=============================================
@@ -116,3 +116,101 @@ $(".newImage").change(function () {
 
     }
 });
+
+/*=============================================
+EDIT PRODUCT
+=============================================*/
+
+$(".tablesData tbody").on("click", "button.btnEditProduct", function () {
+
+    var idProduct = $(this).attr("idProduct");
+
+    var datum = new FormData();
+    datum.append("idProduct", idProduct);
+
+    $.ajax({
+
+        url: "ajax/products_ajax.php",
+        method: "POST",
+        data: datum,
+        cache: false,
+        contentType: false,
+        processData: false,
+        dataType: "json",
+        success: function (answer) {
+
+            // console.log("answer", answer);
+
+            var categoryData = new FormData();
+            categoryData.append("idCategory", answer["category_id"]);
+
+            $.ajax({
+
+                url: "ajax/categories_ajax.php",
+                method: "POST",
+                data: categoryData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                dataType: "json",
+                success: function (answer) {
+
+                    $("#editCategory").val(answer["id"]);
+                    $("#editCategory").html(answer["category"]);
+
+                }
+
+            })
+
+            $("#editCode").val(answer["code"]);
+
+            $("#editDescription").val(answer["description"]);
+
+            $("#editStock").val(answer["stock"]);
+
+            $("#editBuyingPrice").val(answer["buying_price"]);
+
+            $("#editSellingPrice").val(answer["selling_price"]);
+
+            if (answer["image"] != "") {
+
+                $("#currentImage").val(answer["image"]);
+
+                $(".preview").attr("src", answer["image"]);
+
+            }
+
+        }
+
+    })
+
+})
+
+/*=============================================
+DELETE PRODUCT
+=============================================*/
+
+$(".tablesData tbody").on("click", "button.btnDeleteProduct", function () {
+
+    var idProduct = $(this).attr("idProduct");
+    var code = $(this).attr("code");
+    var image = $(this).attr("image");
+
+    swal({
+
+        title: '¿Are you sure you want to delete the product?',
+        text: "¡If you're not sure you can cancel this action!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'Cancel',
+        confirmButtonText: 'Yes, delete product!'
+    }).then(function (result) {
+        if (result) {
+
+            window.location = "index.php?route=products&idProduct=" + idProduct + "&image=" + image + "&Code=" + code;
+
+        }
+    })
+})
