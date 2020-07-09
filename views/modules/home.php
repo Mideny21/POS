@@ -1,42 +1,102 @@
 <div class="content-wrapper">
 
-  
+  <section class="content-header">
+
+    <h1>
+
+      Dashboard
+      
+      <small>Control panel</small>
+
+    </h1>
+
+    <ol class="breadcrumb">
+
+      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+
+      <li class="active">Dashboard</li>
+
+    </ol>
+
+  </section>
 
   <section class="content">
 
-    <div class="box">
+    <div class="row">
+      
+      <?php
 
-      <div class="box-header with-border">
+          include "home/top-boxes.php";
 
-        <h3 class="box-title">Title</h3>
+        ?>
 
-        <div class="box-tools pull-right">
+      
+    
+    </div>
+    
+    <div class="row">
 
-          <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+      <div class="col-lg-12">
 
-            <i class="fa fa-minus"></i>
+      <?php
 
-          </button>
+        if($_SESSION["profile"] =="Administrator"){
 
-          <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+          include "reports/sales-graph.php";
 
-            <i class="fa fa-times"></i>
+        }
 
-          </button>
+      ?>
+      
+      </div>
 
-        </div>
+      <div class="col-lg-6">
+        
+        <?php
+
+          if($_SESSION["profile"] =="Administrator"){
+
+            include "reports/bestseller-products.php";
+
+          }
+
+        ?>
 
       </div>
 
-      <div class="box-body">
+       <div class="col-lg-6">
+        
+        <?php
 
-        Start creating your amazing application!
+          if($_SESSION["profile"] =="Administrator"){
+
+            include "home/recent-products.php";
+
+          }
+
+        ?>
 
       </div>
 
-      <div class="box-footer">
+      <div class="col-lg-12">
+           
+        <?php
 
-        Footer
+        if($_SESSION["profile"] =="Special" || $_SESSION["profile"] =="Seller"){
+
+           echo '<div class="card card-success">
+
+           <div class="card-header">
+
+           <h1>Welcome ' .$_SESSION["name"].'</h1>
+
+           </div>
+
+           </div>';
+
+        }
+
+        ?>
 
       </div>
 

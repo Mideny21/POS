@@ -4,31 +4,37 @@ require_once "connection.php";
 
 class ModelProducts{
 
-    //SHOW PRODUCTS
-    static public function mdlShowProducts($table, $item, $value){
+   /*=============================================
+	SHOWING PRODUCTS
+	=============================================*/
+ 
+	static public function mdlShowProducts($table, $item, $value, $order){
 
-        if ($item != null) {
+		if($item != null){
 
-            $stmt = Connection::connect()->prepare("SELECT * FROM $table WHERE $item = :$item ORDER BY id DESC");
+			$stmt = Connection::connect()->prepare("SELECT * FROM $table WHERE $item = :$item ORDER BY id DESC");
 
-            $stmt->bindParam(":" . $item, $value, PDO::PARAM_STR);
+			$stmt -> bindParam(":".$item, $value, PDO::PARAM_STR);
 
-            $stmt->execute();
+			$stmt -> execute();
 
-            return $stmt->fetch();
-        } else { 
-            $stmt = Connection::connect()->prepare("SELECT * FROM $table");
+			return $stmt -> fetch();
 
-            $stmt->execute();
+		}else{
 
-            return $stmt->fetchAll();
-        }
+			$stmt = Connection::connect()->prepare("SELECT * FROM $table ORDER BY $order DESC");
 
-        $stmt->close();
+			$stmt -> execute();
 
-        $stmt = null;
+			return $stmt -> fetchAll();
 
-    }
+		}
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
 
     /*=============================================
 	ADDING PRODUCT
@@ -140,5 +146,25 @@ class ModelProducts{
 		$stmt = null;
 
 	}
+
+	/*=============================================
+	SHOW ADDING OF THE SALES
+	=============================================*/	
+
+	static public function mdlShowAddingOfTheSales($table){
+
+		$stmt = Connection::connect()->prepare("SELECT SUM(sales) as total FROM $table");
+
+		$stmt -> execute();
+
+		return $stmt -> fetch();
+
+		$stmt -> close();
+
+		$stmt = null;
+	}
+
+
+
 
 }

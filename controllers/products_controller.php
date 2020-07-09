@@ -2,14 +2,19 @@
 
 class ProductController{
 
-    // SHOW PRODUCTS
-    static public function ctrShowProducts($item, $value){
-        $table = "products";
+	/*=============================================
+	SHOW PRODUCTS
+	=============================================*/
+	
+	static public function ctrShowProducts($item, $value, $order){
 
-        $response = ModelProducts::mdlShowProducts($table, $item, $value);
+		$table = "products";
 
-        return $response;
-    }
+		$answer = ModelProducts::mdlShowProducts($table, $item, $value, $order);
+
+		return $answer;
+
+	}
 
     static public function ctrCreateProduct(){
         if (isset($_POST["newDescription"])) {
@@ -139,7 +144,7 @@ class ProductController{
         }
     }
 
-    	/*=============================================
+    /*=============================================
 	EDIT PRODUCT
 	=============================================*/
 
@@ -330,6 +335,20 @@ class ProductController{
 			}		
 		
 		}
+
+	}
+
+	/*=============================================
+	SHOW ADDING OF THE SALES
+	=============================================*/
+
+	static public function ctrShowAddingOfTheSales(){
+
+		$table = "products";
+
+		$answer = ModelProducts::mdlShowAddingOfTheSales($table);
+
+		return $answer;
 
 	}
 }

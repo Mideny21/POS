@@ -8,7 +8,7 @@ session_start();
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -37,6 +37,11 @@ session_start();
   <!-- DataTables -->
   <link rel="stylesheet" href="views/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="views/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+   <!-- Morris js -->
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+ <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+ <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
   <!-- Sweet Alert -->
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
@@ -84,7 +89,8 @@ session_start();
         $_GET["route"] == 'customers' ||
         $_GET["route"] == 'manage-sales' ||
         $_GET["route"] == 'create-sales' ||
-        $_GET["route"] == 'sales-report' ||
+        $_GET["route"] == 'edit-sale' ||
+        $_GET["route"] == 'reports' ||
         $_GET["route"] == 'logout'
       ) {
 
@@ -129,6 +135,7 @@ session_start();
   <script src="views/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- ChartJS -->
   <script src="views/plugins/chart.js/Chart.min.js"></script>
+
   <!-- Sparkline -->
   <script src="views/plugins/sparklines/sparkline.js"></script>
   <!-- JQVMap -->
@@ -167,6 +174,8 @@ session_start();
   <script src="views/js/products.js"></script>
   <script src="views/js/customers.js"></script>
   <script src="views/js/sales.js"></script>
+  <script src="views/js/reports.js"></script>
+
 
 
 
@@ -219,23 +228,7 @@ session_start();
           format: 'MM/DD/YYYY hh:mm A'
         }
       });
-      //Date range as a button
-      $('#daterange-btn').daterangepicker({
-          ranges: {
-            'Today': [moment(), moment()],
-            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-            'This Month': [moment().startOf('month'), moment().endOf('month')],
-            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-          },
-          startDate: moment().subtract(29, 'days'),
-          endDate: moment()
-        },
-        function(start, end) {
-          $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
-        }
-      )
+      
 
       //Timepicker
       $('#timepicker').datetimepicker({

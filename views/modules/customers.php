@@ -1,28 +1,30 @@
 <div class="content-wrapper">
 
-  <section class="content-header">
+  <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Customers Management</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="logout">Logout</a></li>
+             
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
 
-    <h1>
-
-      Customer management
-
-    </h1>
-
-    <ol class="breadcrumb">
-
-      <li><a href="home"><i class="fa fa-dashboard"></i> Home</a></li>
-
-      <li class="active">Dashboard</li>
-
-    </ol>
-
-  </section>
+     <hr>
 
   <section class="content">
 
-    <div class="box">
+    <div class="card">
 
-      <div class="box-header with-border">
+      <div class="card-header with-border">
 
         <button class="btn btn-primary" data-toggle="modal" data-target="#addCustomer">
 
@@ -31,7 +33,7 @@
         </button>
 
       </div>
-      <div class="box-body">
+      <div class="card-body">
         <table class="table table-bordered table-striped dt-responsive tables" width="100%">
        
           <thead>
@@ -134,12 +136,12 @@ MODAL ADD CUSTOMER
         MODAL HEADER
         ======================================-->
 
-        <div class="modal-header" style="background: #3c8dbc; color: #fff">
-          
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          
-          <h4 class="modal-title">Add Customer</h4>
-
+        
+        <div class="modal-header" style="background:#3c8dbc">
+          <h5 class="modal-title" style="color:#fff" id="exampleModalLabel">Add Customers</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
 
         <!--=====================================
@@ -154,7 +156,13 @@ MODAL ADD CUSTOMER
 
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+
+              <div class="input-group-append">
+                <div class="input-group-text">
+                 <span class="fa fa-user"></span>
+                </div>
+              </div>
+               
                 <input class="form-control input-lg" type="text" name="newCustomer" placeholder="Write name" required>
               </div>
             </div>
@@ -163,7 +171,13 @@ MODAL ADD CUSTOMER
 
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+
+              <div class="input-group-append">
+                <div class="input-group-text">
+                 <span class="fa fa-key"></span>
+                </div>
+              </div>
+              
                 <input class="form-control input-lg" type="number" min="0" name="newIdDocument" placeholder="Write your ID" required>
               </div>
             </div>
@@ -172,7 +186,14 @@ MODAL ADD CUSTOMER
 
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+
+              
+              <div class="input-group-append">
+                <div class="input-group-text">
+                 <span class="fa fa-envelope"></span>
+                </div>
+              </div>
+              
                 <input class="form-control input-lg" type="text" name="newEmail" placeholder="Email" required>
               </div>
             </div>
@@ -181,7 +202,13 @@ MODAL ADD CUSTOMER
 
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+
+              <div class="input-group-append">
+                <div class="input-group-text">
+                 <span class="fa fa-phone"></span>
+                </div>
+              </div>
+              
                 <input class="form-control input-lg" type="text" name="newPhone" placeholder="phone" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
               </div>
             </div>
@@ -190,7 +217,13 @@ MODAL ADD CUSTOMER
 
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+
+               <div class="input-group-append">
+                <div class="input-group-text">
+                 <span class="fa fa-map-marker"></span>
+                </div>
+              </div>
+              
                 <input class="form-control input-lg" type="text" name="newAddress" placeholder="Address" required>
               </div>
             </div>
@@ -200,7 +233,13 @@ MODAL ADD CUSTOMER
 
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+
+               <div class="input-group-append">
+                <div class="input-group-text">
+                 <span class="fa fa-calendar"></span>
+                </div>
+              </div>
+      
                 <input class="form-control input-lg" type="text" name="newBirthdate" placeholder="Birth Date" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask required>
               </div>
             </div>

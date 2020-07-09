@@ -1,5 +1,6 @@
 <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
+  
    <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
@@ -17,17 +18,18 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
+     <hr>
 
     <!-- Main content -->
     <section class="content">
 
       <!-- Default box -->
-      <div class="box">
-        <div class="box-header with-border">
+      <div class="card">
+        <div class="card-header with-border">
           <button class="btn btn-primary" data-toggle="modal" data-target="#addCategories">Add Categories</button>
 
         </div>
-        <div class="box-body">
+        <div class="card-body">
           <table class="table table-bordered table-striped dt-responsive tables" width="100%">
          
             <thead>
@@ -101,17 +103,32 @@
     <!-- Modal content-->
     <div class="modal-content">
       <form role="form" method="POST">
-        <div class="modal-header" style="background: #3c8dbc; color: #fff">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Add Categories</h4>
+
+        <!--=====================================
+        MODAL HEADER
+        ======================================-->
+
+        
+        <div class="modal-header" style="background:#3c8dbc">
+          <h5 class="modal-title" style="color:#fff" id="exampleModalLabel">Add Categories</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
+
+
         <div class="modal-body">
           <div class="box-body">
 
             <!--Input name -->
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-th"></i></span>
+              <div class="input-group-append">
+              <div class="input-group-text">
+               <span class="fa fa-th"></span>
+              </div>
+              </div>
+               
                 <input class="form-control input-lg" type="text" name="newCategory" placeholder="Add Category" required>
               </div>
             </div>

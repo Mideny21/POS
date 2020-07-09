@@ -17,6 +17,7 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
+     <hr>
 
   <section class="content">
 
@@ -27,13 +28,13 @@
       =============================================-->
       <div class="col-lg-5 col-xs-12">
         
-        <div class="box box-success">
+        <div class="card card-success">
 
-          <div class="box-header with-border"></div>
+          <div class="card-header with-border"></div>
 
           <form role="form" method="post" class="saleForm">
 
-            <div class="box-body">
+            <div class="card-body">
                 
                 <div class="box">
 
@@ -239,7 +240,7 @@
 
                     <div class="form-group row">
                       
-                      <div class="col-xs-6" style="padding-right: 0">
+                      <div class="col-md-6" style="padding-right: 0">
 
                         <div class="input-group">
                       
@@ -256,7 +257,7 @@
 
                       </div>
 
-                      <div class="paymentMethodBoxes"></div>
+                      <div class="paymentMethodBoxes" style="display:contents;"></div>
 
                       <input type="hidden" name="listPaymentMethod" id="listPaymentMethod" required>
 
@@ -268,7 +269,7 @@
 
             </div>
 
-            <div class="box-footer">
+            <div class="card-footer">
               <button type="submit" class="btn btn-primary pull-right">Save sale</button>
             </div>
           </form>
@@ -292,11 +293,11 @@
 
       <div class="col-lg-7 hidden-md hidden-sm hidden-xs">
         
-          <div class="box box-warning">
+          <div class="card card-warning">
             
-            <div class="box-header with-border"></div>
+            <div class="card-header with-border"></div>
 
-            <div class="box-body">
+            <div class="card-body">
               
               <table class="table table-bordered table-striped dt-responsive salesTable width="100%"">
                   
@@ -348,12 +349,12 @@ MODAL ADD CUSTOMER
         MODAL HEADER
         ======================================-->
 
-        <div class="modal-header" style="background: #3c8dbc; color: #fff">
-          
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          
-          <h4 class="modal-title">Add Customer</h4>
-
+        
+        <div class="modal-header" style="background:#3c8dbc">
+          <h5 class="modal-title" style="color:#fff" id="exampleModalLabel">Add Customers</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
 
         <!--=====================================
@@ -368,7 +369,13 @@ MODAL ADD CUSTOMER
 
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+
+              <div class="input-group-append">
+                <div class="input-group-text">
+                 <span class="fa fa-user"></span>
+                </div>
+              </div>
+               
                 <input class="form-control input-lg" type="text" name="newCustomer" placeholder="Write name" required>
               </div>
             </div>
@@ -377,7 +384,13 @@ MODAL ADD CUSTOMER
 
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+
+              <div class="input-group-append">
+                <div class="input-group-text">
+                 <span class="fa fa-key"></span>
+                </div>
+              </div>
+              
                 <input class="form-control input-lg" type="number" min="0" name="newIdDocument" placeholder="Write your ID" required>
               </div>
             </div>
@@ -386,7 +399,14 @@ MODAL ADD CUSTOMER
 
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+
+              
+              <div class="input-group-append">
+                <div class="input-group-text">
+                 <span class="fa fa-envelope"></span>
+                </div>
+              </div>
+              
                 <input class="form-control input-lg" type="text" name="newEmail" placeholder="Email" required>
               </div>
             </div>
@@ -395,7 +415,13 @@ MODAL ADD CUSTOMER
 
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+
+              <div class="input-group-append">
+                <div class="input-group-text">
+                 <span class="fa fa-phone"></span>
+                </div>
+              </div>
+              
                 <input class="form-control input-lg" type="text" name="newPhone" placeholder="phone" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
               </div>
             </div>
@@ -404,7 +430,13 @@ MODAL ADD CUSTOMER
 
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+
+               <div class="input-group-append">
+                <div class="input-group-text">
+                 <span class="fa fa-map-marker"></span>
+                </div>
+              </div>
+              
                 <input class="form-control input-lg" type="text" name="newAddress" placeholder="Address" required>
               </div>
             </div>
@@ -414,7 +446,13 @@ MODAL ADD CUSTOMER
 
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+
+               <div class="input-group-append">
+                <div class="input-group-text">
+                 <span class="fa fa-calendar"></span>
+                </div>
+              </div>
+      
                 <input class="form-control input-lg" type="text" name="newBirthdate" placeholder="Birth Date" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask required>
               </div>
             </div>

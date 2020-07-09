@@ -13,8 +13,9 @@ class ProductsTable{
     static public function showProductsTable(){
         $item = null;
         $value = null;
+        $order = "id";
 
-        $products = ProductController::ctrShowProducts($item, $value);
+        $products = ProductController::ctrShowProducts($item, $value, $order);
 
 
         $jasonData = '{

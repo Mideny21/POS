@@ -49,7 +49,7 @@ $(".salesTable tbody").on("click", "button.addProductSale", function () {
                 swal({
                     title: "There's no stock available",
                     icon: "error",
-                    confirmButtonText: "¡Close!"
+                    confirmButtonText: "Close!"
                 });
 
 
@@ -237,11 +237,11 @@ $(".btnAddProduct").click(function () {
 
                 '<!-- Product description -->' +
 
-                '<div class="col-xs-6" style="padding-right:0px">' +
+                '<div class="col-xs-6 col-md-6" style="padding-right:0px">' +
 
                 '<div class="input-group">' +
 
-                '<span class="input-group-append"><button type="button" class="btn btn-danger btn-xs removeProduct" idProduct><i class="fa fa-times"></i></button></span>' +
+                '<span class="input-group-append"><button type="button" class="btn btn-danger  removeProduct" idProduct><i class="fa fa-times"></i></button></span>' +
 
                 '<select class="form-control newProductDescription" id="product' + numProduct + '" idProduct name="newProductDescription" required>' +
 
@@ -255,7 +255,7 @@ $(".btnAddProduct").click(function () {
 
                 '<!-- Product quantity -->' +
 
-                '<div class="col-xs-3 enterQuantity">' +
+                '<div class="col-xs-3 col-md-3 enterQuantity">' +
 
                 '<input type="number" class="form-control newProductQuantity" name="newProductQuantity" min="1" value="1" stock newStock required>' +
 
@@ -263,11 +263,9 @@ $(".btnAddProduct").click(function () {
 
                 '<!-- Product price -->' +
 
-                '<div class="col-xs-3 enterPrice" style="padding-left:0px">' +
+                '<div class="col-xs-3 col-md-3 enterPrice" style="padding-left:0px">' +
 
                 '<div class="input-group">' +
-
-                '<span class="input-group-append"><i class="ion ion-social-usd"></i></span>' +
 
                 '<input type="text" class="form-control newProductPrice" realPrice="" name="newProductPrice" readonly required>' +
 
@@ -392,7 +390,7 @@ $(".saleForm").on("change", "input.newProductQuantity", function () {
         swal({
             title: "The quantity is more than your stock",
             text: "¡There's only" + $(this).attr("stock") + " units!",
-            type: "error",
+            icon: "error",
             confirmButtonText: "Close!"
         });
 
@@ -494,17 +492,16 @@ $("#newPaymentMethod").change(function () {
 
     if (method == "cash") {
 
-        $(this).parent().parent().removeClass("col-xs-6");
+        $(this).parent().parent().removeClass("col-md-6");
 
         $(this).parent().parent().addClass("col-md-4");
 
         $(this).parent().parent().parent().children(".paymentMethodBoxes").html(
 
+
             '<div class="col-md-4">' +
 
             '<div class="input-group">' +
-
-            '<span class="input-group-append"><i class="ion ion-social-usd"></i></span>' +
 
             '<input type="text" class="form-control" id="newCashValue" placeholder="000000" required>' +
 
@@ -515,8 +512,6 @@ $("#newPaymentMethod").change(function () {
             '<div class="col-md-4" id="getCashChange" style="padding-left:0px">' +
 
             '<div class="input-group">' +
-
-            '<span class="input-group-append"><i class="ion ion-social-usd"></i></span>' +
 
             '<input type="text" class="form-control" id="newCashChange" placeholder="000000" readonly required>' +
 
@@ -537,13 +532,13 @@ $("#newPaymentMethod").change(function () {
 
     } else {
 
-        $(this).parent().parent().removeClass('col-xs-4');
+        $(this).parent().parent().removeClass('col-md-4');
 
-        $(this).parent().parent().addClass('col-xs-6');
+        $(this).parent().parent().addClass('col-md-6');
 
         $(this).parent().parent().parent().children('.paymentMethodBoxes').html(
 
-            '<div class="col-xs-6" style="padding-left:0px">' +
+            '<div class="col-md-6" style="padding-left:0px">' +
 
             '<div class="input-group">' +
 
@@ -629,3 +624,149 @@ function listMethods() {
     }
 
 }
+
+
+/*=============================================
+EDIT SALE BUTTON
+=============================================*/
+$(".tables").on("click", ".btnEditSale", function () {
+
+    var idSale = $(this).attr("idSale");
+
+    window.location = "index.php?route=edit-sale&idSale=" + idSale;
+
+
+})
+
+
+
+/*=============================================
+DELETE SALE
+=============================================*/
+$(".tables").on("click", ".btnDeleteSale", function () {
+
+    var idSale = $(this).attr("idSale");
+
+    swal({
+        title: '¿Are you sure you want to delete the sale?',
+        text: "If you're not you can cancel!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'Cancel',
+        confirmButtonText: 'Yes, delete sale!'
+    }).then(function (result) {
+        if (result) {
+
+            window.location = "index.php?route=manage-sales&idSale=" + idSale;
+        }
+
+    })
+
+})
+
+/*=============================================
+PRINT BILL
+=============================================*/
+
+$(".tables").on("click", ".btnPrintBill", function () {
+
+    var saleCode = $(this).attr("saleCode");
+
+    window.open("extensions/tcpdf/pdf/bill.php?code=" + saleCode, "_blank");
+
+})
+
+
+/*=============================================
+DATES RANGE
+=============================================*/
+
+$('#daterange-btn').daterangepicker(
+    {
+        ranges: {
+            'Today': [moment(), moment()],
+            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            'Last 7 days': [moment().subtract(6, 'days'), moment()],
+            'Last 30 days': [moment().subtract(29, 'days'), moment()],
+            'this month': [moment().startOf('month'), moment().endOf('month')],
+            'Last month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        },
+        startDate: moment(),
+        endDate: moment()
+    },
+    function (start, end) {
+        $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+
+        var initialDate = start.format('YYYY-MM-DD');
+
+        var finalDate = end.format('YYYY-MM-DD');
+
+        var captureRange = $("#daterange-btn span").html();
+
+        localStorage.setItem("captureRange", captureRange);
+        console.log("localStorage", localStorage);
+
+        window.location = "index.php?route=manage-sales&initialDate=" + initialDate + "&finalDate=" + finalDate;
+
+    }
+
+)
+
+/*=============================================
+CANCEL DATES RANGE
+=============================================*/
+
+$(".daterangepicker.opensleft .range_inputs .cancelBtn").on("click", function () {
+
+    localStorage.removeItem("captureRange");
+    localStorage.clear();
+    window.location = "sales";
+})
+
+/*=============================================
+CAPTURE TODAY'S BUTTON
+=============================================*/
+
+$(".daterangepicker.opensleft .ranges li").on("click", function () {
+
+    var todayButton = $(this).attr("data-range-key");
+
+    if (todayButton == "Today") {
+
+        var d = new Date();
+
+        var day = d.getDate();
+        var month = d.getMonth() + 1;
+        var year = d.getFullYear();
+
+        if (month < 10) {
+
+            var initialDate = year + "-0" + month + "-" + day;
+            var finalDate = year + "-0" + month + "-" + day;
+
+        } else if (day < 10) {
+
+            var initialDate = year + "-" + month + "-0" + day;
+            var finalDate = year + "-" + month + "-0" + day;
+
+        } else if (month < 10 && day < 10) {
+
+            var initialDate = year + "-0" + month + "-0" + day;
+            var finalDate = year + "-0" + month + "-0" + day;
+
+        } else {
+
+            var initialDate = year + "-" + month + "-" + day;
+            var finalDate = year + "-" + month + "-" + day;
+
+        }
+
+        localStorage.setItem("captureRange", "Today");
+
+        window.location = "index.php?route=manage-sales&initialDate=" + initialDate + "&finalDate=" + finalDate;
+
+    }
+
+})

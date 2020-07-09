@@ -2,7 +2,7 @@
   	<!-- Brand Logo -->
   	<a href="home" class="brand-link">
   		<img src="views/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-  		<span class="brand-text font-weight-light">AdminLTE 3</span>
+  		<span class="brand-text font-weight-light">Inventory</span>
   	</a>
 
   	<!-- Sidebar -->
@@ -17,7 +17,7 @@
 						echo '<img src="' . $_SESSION["photo"] . '"class="img-circle">';
 					} else {
 
-						echo '<img src="views/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">';
+						echo '<img src="views/dist/img/avatar.png" class="img-circle elevation-2" alt="User Image">';
 					}
 
 					?>
@@ -86,7 +86,7 @@
 					  <li class="nav-item">
   							<a href="manage-sales" class="nav-link">
   								<i class="far fa-circle nav-icon"></i>
-  								<p>Manage-Sales</p>
+  								<p>Sales</p>
   							</a>
   						</li>
   						<li class="nav-item">
@@ -96,7 +96,7 @@
   							</a>
   						</li>
   						<li class="nav-item">
-  							<a href="sales-report" class="nav-link">
+  							<a href="reports" class="nav-link">
   								<i class="far fa-circle nav-icon"></i>
   								<p>Sales-report</p>
   							</a>

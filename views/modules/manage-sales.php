@@ -17,23 +17,34 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-    
+
 
   <section class="content">
 
-    <div class="box">
+    <div class="card">
 
-      <div class="box-header with-border">
-      <a href="create-sales">
-        <button class="btn btn-primary">
+      <div class="card-header with-border">
+     
+        <a href="create-sales">
+          <button class="btn btn-primary" >
+        
+            Add sale
+  
+          </button>
+        </a>
 
-          Add Sales
+        <button type="button" class="btn btn-default float-sm-right" id="daterange-btn">
+           
+            <span>
+              <i class="fa fa-calendar"></i> Date Range
+            </span>
+
+            <i class="fa fa-caret-down"></i>
 
         </button>
-      </a>
       </div>
 
-      <div class="box-body">
+      <div class="card-body">
 
         <table class="table table-bordered table-striped dt-responsive tables" width="100%">
        
@@ -57,12 +68,21 @@
 
           <tbody>
 
-            <?php
+       <?php
 
-          $item = null;
-          $value = null;
+          if(isset($_GET["initialDate"])){
 
-          $answer = ControllerSales::ctrShowSales($item, $value);
+            $initialDate = $_GET["initialDate"];
+            $finalDate = $_GET["finalDate"];
+
+          }else{
+
+            $initialDate = null;
+            $finalDate = null;
+
+          }
+
+          $answer = ControllerSales::ctrSalesDatesRange($initialDate, $finalDate);
 
           foreach ($answer as $key => $value) {
            
@@ -97,11 +117,15 @@
 
                     <div class="btn-group">
                         
-                      <div class="btn-group">
+                   
                         
-                      <button class="btn btn-info"><i class="fa fa-print"></i></button>
+                        <button class="btn btn-info btnPrintBill" saleCode="'.$value["code"].'">
 
-                        <button class="btn btn-warning btnEditSale" idSale="'.$value["id"].'"><i class="fa fa-pencil"></i></button>
+                        <i class="fa fa-print"></i>
+
+                      </button>
+
+                        <button class="btn btn-warning btnEditSale" idSale="'.$value["id"].'"><i class="fa fa-edit"></i></button>
 
                         <button class="btn btn-danger btnDeleteSale" idSale="'.$value["id"].'"><i class="fa fa-times"></i></button>
                    </div>  
@@ -118,7 +142,12 @@
           </tbody>
 
         </table>
+       <?php
 
+          $deleteSale = new ControllerSales();
+          $deleteSale -> ctrDeleteSale();
+
+          ?>
       </div>
     
     </div>

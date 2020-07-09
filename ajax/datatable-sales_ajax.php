@@ -13,8 +13,9 @@ class productsTableSales{
 
 		$item = null;
 		$value = null;
+		$order = "id";
 
-		$products = ProductController::ctrShowProducts($item, $value);
+		$products = ProductController::ctrShowProducts($item, $value, $order);
 
 		if(count($products) == 0){
 

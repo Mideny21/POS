@@ -20,9 +20,9 @@
 
   <section class="content">
 
-    <div class="box">
+    <div class="card">
 
-      <div class="box-header with-border">
+      <div class="card-header with-border">
 
         <button class="btn btn-primary" data-toggle="modal" data-target="#addUser">
 
@@ -32,7 +32,7 @@
 
       </div>
 
-      <div class="box-body">
+      <div class="card-body">
 
         <table class="table table-bordered table-striped dt-responsive tables" width="100%">
 
