@@ -306,7 +306,6 @@
                    <tr>
                      
                      <th style="width:10px">#</th>
-                     <th>Image</th>
                      <th style="width:30px">Code</th>
                      <th>Description</th>
                      <th>Stock</th>

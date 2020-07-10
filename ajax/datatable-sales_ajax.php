@@ -37,7 +37,7 @@ class productsTableSales{
 					We bring the image
 					=============================================*/
 					
-					$image = "<img src='".$products[$i]["image"]."' width='40px'>";
+					// $image = "<img src='".$products[$i]["image"]."' width='40px'>";
 
 					/*=============================================
 					Stock
@@ -67,7 +67,6 @@ class productsTableSales{
 
 					$jsonData .='[
 						"'.($i+1).'",
-						"'.$image.'",
 						"'.$products[$i]["code"].'",
 						"'.$products[$i]["description"].'",
 						"'.$stock.'",

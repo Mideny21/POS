@@ -1,3 +1,12 @@
+<?php 
+ if($_SESSION["profile"] == "special"){
+   echo '<srcipt>
+    window.location = "home";
+   </script>';
+   return;
+ }
+
+?>
 <div class="content-wrapper">
 
   <!-- Content Header (Page header) -->
@@ -123,12 +132,16 @@
 
                         <i class="fa fa-print"></i>
 
-                      </button>
+                      </button>';
 
-                        <button class="btn btn-warning btnEditSale" idSale="'.$value["id"].'"><i class="fa fa-edit"></i></button>
+                         if($_SESSION["profile"] == "administrator"){
 
-                        <button class="btn btn-danger btnDeleteSale" idSale="'.$value["id"].'"><i class="fa fa-times"></i></button>
-                   </div>  
+                       echo' <button class="btn btn-warning btnEditSale" idSale="'.$value["id"].'"><i class="fa fa-edit"></i></button>
+
+                        <button class="btn btn-danger btnDeleteSale" idSale="'.$value["id"].'"><i class="fa fa-times"></i></button>';
+                         }
+                         
+                  echo' </div>  
 
                   </td>
 

@@ -488,11 +488,10 @@ class ControllerSales{
 
 			header('Expires: 0');
 			header('Cache-control: private');
-			header("Content-type: application/vnd.ms-excel"); // Excel file
+			header("Content-type: application/xls"); // Excel file
 			header("Cache-Control: cache, must-revalidate"); 
 			header('Content-Description: File Transfer');
 			header('Last-Modified: '.date('D, d M Y H:i:s'));
-			header("Pragma: public"); 
 			header('Content-Disposition:; filename="'.$name.'"');
 			header("Content-Transfer-Encoding: binary");
 

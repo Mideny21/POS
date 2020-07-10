@@ -1,3 +1,13 @@
+<?php 
+ if($_SESSION["profile"] == "special"){
+   echo '<srcipt>
+    window.location = "home";
+   </script>';
+   return;
+ }
+
+?>
+
 <div class="content-wrapper">
 
   <!-- Content Header (Page header) -->
@@ -94,11 +104,13 @@
 
                         <div class="btn-group">
                             
-                          <button class="btn btn-warning btnEditCustomer" data-toggle="modal" data-target="#modalEditCustomer" idCustomer="'.$value["id"].'"><i class="fas fa-edit"></i></button>
+                          <button class="btn btn-warning btnEditCustomer" data-toggle="modal" data-target="#modalEditCustomer" idCustomer="'.$value["id"].'"><i class="fas fa-edit"></i></button>';
+   
+                          if($_SESSION["profile"] == "administrator"){
 
-                          <button class="btn btn-danger btnDeleteCustomer" idCustomer="'.$value["id"].'"><i class="fas fa-times"></i></button>
-
-                        </div>  
+                         echo' <button class="btn btn-danger btnDeleteCustomer" idCustomer="'.$value["id"].'"><i class="fas fa-times"></i></button>';
+                          }
+                        echo'</div>  
 
                       </td>
 

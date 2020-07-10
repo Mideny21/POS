@@ -43,19 +43,13 @@ $products = ProductController::ctrShowProducts($item, $value, $order);
 
       echo '<li class="item">
 
-        <div class="product-img">
-
-          <img src="'.$products[$i]["image"].'" alt="Product Image">
-
-        </div>
-
         <div class="product-info">
 
           <a href="" class="product-title">
 
             '.$products[$i]["description"].'
 
-            <span class="label label-warning pull-right">$'.$products[$i]["sellingPrice"].'</span>
+            <span class="label label-warning pull-right">Tsh '.$products[$i]["selling_price"].'</span>
 
           </a>
     

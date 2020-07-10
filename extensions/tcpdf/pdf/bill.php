@@ -59,16 +59,15 @@ $pdf->AddPage();
 // ---------------------------------------------------------
 
 $block1 = <<<EOF
-
-	<table>
+<table>
 		
 		<tr>
-			
-		
+			<br>
+			<td><img src="images/traik.png" style="width:150px;"></td>
 
 			<td style="background-color:white; width:140px">
 				
-				<div style="font-size:8.5px; text-align:center; line-height:15px;">
+				<div style="font-size:8.5px; text-align:right; line-height:15px;">
 					
 					<br>
 					NIT: 71.759.963-9
@@ -78,10 +77,6 @@ $block1 = <<<EOF
 
 				</div>
 
-			</td>
-
-			<td style="width:150px;">
-			<img src="images/traik.png">
 			</td>
 
 			<td style="background-color:white; width:140px">
@@ -98,8 +93,22 @@ $block1 = <<<EOF
 				
 			</td>
 
-			<td style="background-color:white; width:110px; text-align:center; color:red"><br><br>BILL N.<br>$valueSale</td>
+			
+			<td style="background-color:white;">
 
+				<div style="font-size:12px; text-align:right;">
+					
+					<br>
+					SALES INVOICE
+					
+					<br>
+					#. $valueSale
+
+				</div>
+				
+			</td>
+
+			
 		</tr>
 
 	</table>

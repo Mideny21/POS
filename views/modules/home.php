@@ -1,32 +1,36 @@
 <div class="content-wrapper">
 
-  <section class="content-header">
-
-    <h1>
-
-      Dashboard
-      
-      <small>Control panel</small>
-
-    </h1>
-
-    <ol class="breadcrumb">
-
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-
-      <li class="active">Dashboard</li>
-
-    </ol>
-
-  </section>
+   <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Dashboard</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="logout">Logout</a></li>
+             
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
 
   <section class="content">
+<div class="container-fluid">
+
 
     <div class="row">
       
       <?php
 
-          include "home/top-boxes.php";
+        if($_SESSION["profile"] == "administrator"){
+
+                      include "home/top-boxes.php";
+
+        }
 
         ?>
 
@@ -40,7 +44,7 @@
 
       <?php
 
-        if($_SESSION["profile"] =="Administrator"){
+        if($_SESSION["profile"] =="administrator"){
 
           include "reports/sales-graph.php";
 
@@ -54,7 +58,7 @@
         
         <?php
 
-          if($_SESSION["profile"] =="Administrator"){
+          if($_SESSION["profile"] =="administrator"){
 
             include "reports/bestseller-products.php";
 
@@ -68,7 +72,7 @@
         
         <?php
 
-          if($_SESSION["profile"] =="Administrator"){
+          if($_SESSION["profile"] =="administrator"){
 
             include "home/recent-products.php";
 
@@ -82,7 +86,7 @@
            
         <?php
 
-        if($_SESSION["profile"] =="Special" || $_SESSION["profile"] =="Seller"){
+        if($_SESSION["profile"] =="special" || $_SESSION["profile"] =="seller"){
 
            echo '<div class="card card-success">
 
@@ -100,6 +104,7 @@
 
       </div>
 
+    </div>
     </div>
 
   </section>

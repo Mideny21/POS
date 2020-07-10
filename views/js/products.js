@@ -1,8 +1,10 @@
 //LOADING DYNAMIC DATA FROM DATABASE
 
+var hiddenprofile = $("#hiddenprofile").val();
+
 
 $('.tablesData').DataTable({
-    "ajax": "ajax/datatable-product_ajax.php",
+    "ajax": "ajax/datatable-product_ajax.php?hiddenprofile=" + hiddenprofile,
     "defender": true,
     "retrieve": true,
     "processing": true,

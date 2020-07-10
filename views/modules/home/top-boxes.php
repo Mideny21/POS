@@ -19,13 +19,13 @@ $totalProducts = count($products);
 
 
 
-<div class="col-lg-3 col-xs-6">
+<div class="col-lg-3 col-6">
 
-  <div class="small-box bg-aqua">
+  <div class="small-box bg-info">
     
     <div class="inner">
       
-      <h3>Tsh <?php echo number_format($sales["total"],2); ?></h3>
+      <h6>Tsh <?php echo number_format($sales["total"],2); ?></h6>
 
       <p>Sales</p>
     
@@ -37,7 +37,7 @@ $totalProducts = count($products);
     
     </div>
     
-    <a href="sales" class="small-box-footer">
+    <a href="manage-sales" class="small-box-footer">
       
       More info <i class="fa fa-arrow-circle-right"></i>
     
@@ -47,13 +47,13 @@ $totalProducts = count($products);
 
 </div>
 
-<div class="col-lg-3 col-xs-6">
+<div class="col-lg-3 col-6">
 
-  <div class="small-box bg-green">
+  <div class="small-box bg-success">
     
     <div class="inner">
     
-      <h3><?php echo number_format($totalCategories); ?></h3>
+      <h6><?php echo number_format($totalCategories); ?></h6>
 
       <p>Categories</p>
     
@@ -75,13 +75,13 @@ $totalProducts = count($products);
 
 </div>
 
-<div class="col-lg-3 col-xs-6">
+<div class="col-lg-3 col-6">
 
-  <div class="small-box bg-yellow">
+  <div class="small-box bg-warning">
     
     <div class="inner">
     
-      <h3><?php echo number_format($totalCustomers); ?></h3>
+      <h6><?php echo number_format($totalCustomers); ?></h6>
 
       <p>Customers</p>
   
@@ -103,13 +103,13 @@ $totalProducts = count($products);
 
 </div>
 
-<div class="col-lg-3 col-xs-6">
+<div class="col-lg-3 col-6">
 
-  <div class="small-box bg-red">
+  <div class="small-box bg-danger">
   
     <div class="inner">
     
-      <h3><?php echo number_format($totalProducts); ?></h3>
+      <h6><?php echo number_format($totalProducts); ?></h6>
 
       <p>products</p>
     

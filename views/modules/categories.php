@@ -1,3 +1,13 @@
+<?php 
+ if($_SESSION["profile"] == "seller"){
+   echo '<srcipt>
+    window.location = "home";
+   </script>';
+   return;
+ }
+
+?>
+
 <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
   
@@ -63,11 +73,13 @@
 
                             <div class="btn-group">
                                 
-                              <button class="btn btn-warning btnEditCategory" idCategory="'.$value["id"].'" data-toggle="modal" data-target="#editCategories"><i class="fas fa-edit"></i></button>
+                              <button class="btn btn-warning btnEditCategory" idCategory="'.$value["id"].'" data-toggle="modal" data-target="#editCategories"><i class="fas fa-edit"></i></button>';
+                              
+                         if($_SESSION["profile"] == "administrator"){
 
-                              <button class="btn btn-danger btnDeleteCategory" idCategory="'.$value["id"].'"><i class="fas fa-times"></i></button>
-
-                            </div>  
+                             echo' <button class="btn btn-danger btnDeleteCategory" idCategory="'.$value["id"].'"><i class="fas fa-times"></i></button>';
+                         }
+                          echo'  </div>  
 
                           </td>
 

@@ -53,8 +53,6 @@ SALES GRAPH
 <div class="card bg-gradient-info ">
 	
 	<div class="card-header">
-		
- 		<i class="fa fa-th"></i>
 
   		<h3 class="card-title">Sales Graph</h3>
 

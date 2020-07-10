@@ -44,6 +44,8 @@ session_start();
  <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
   <!-- Sweet Alert -->
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <!-- ChartJS -->
+  <script src="views/plugins/chart.js/Chart.min.js"></script>
 
 
   <!--====  End of views/views/plugins CSS  ====-->
@@ -133,8 +135,7 @@ session_start();
   </script>
   <!-- Bootstrap 4 -->
   <script src="views/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- ChartJS -->
-  <script src="views/plugins/chart.js/Chart.min.js"></script>
+  
 
   <!-- Sparkline -->
   <script src="views/plugins/sparklines/sparkline.js"></script>

@@ -2,7 +2,7 @@
   	<!-- Brand Logo -->
   	<a href="home" class="brand-link">
   		<img src="views/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-  		<span class="brand-text font-weight-light">Inventory</span>
+  		<span class="brand-text font-weight-light">TRAIK</span>
   	</a>
 
   	<!-- Sidebar -->
@@ -33,10 +33,14 @@
   			<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
   				<!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+<?php
 
-  				<li class="nav-item">
+if($_SESSION["profile"] == "administrator"){
+
+
+ echo' 				<li class="nav-item">
   					<a href="home" class="nav-link">
-  						<i class="nav-icon fas fa-th"></i>
+  						<i class="nav-icon fa fa-home"></i>
   						<p>
   							home
   						</p>
@@ -44,15 +48,19 @@
   				</li>
   				<li class="nav-item">
   					<a href="users" class="nav-link">
-  						<i class="fas fa-users"></i>
+  						<i class="fas fa-user"></i>
   						<p>
   							Users
   						</p>
   					</a>
-  				</li>
-  				<li class="nav-item">
+				  </li>';
+}
+if($_SESSION["profile"] == "administrator" || $_SESSION["profile"] == "special"){
+				  
+				  echo'
+				   	<li class="nav-item">
   					<a href="categories" class="nav-link">
-  						<i class="fas fa-users"></i>
+  						<i class="fa fa-th"></i>
   						<p>
   							categories
   						</p>
@@ -60,21 +68,29 @@
   				</li>
   				<li class="nav-item">
   					<a href="products" class="nav-link">
-  						<i class="fas fa-users"></i>
+  						<i class="fa fa-product-hunt"></i>
   						<p>
   							Product
   						</p>
   					</a>
-  				</li>
-				  <li class="nav-item">
+				  </li>';
+				  
+}
+if($_SESSION["profile"] == "administrator" || $_SESSION["profile"] == "seller"){
+
+			echo '	  <li class="nav-item">
   					<a href="customers" class="nav-link">
   						<i class="fas fa-users"></i>
   						<p>
   							Customers
   						</p>
   					</a>
-  				</li>
-  				<li class="nav-item has-treeview">
+				  </li>';
+				  
+}
+if($_SESSION["profile"] == "administrator" || $_SESSION["profile"] == "seller"){
+
+	echo'  <li class="nav-item has-treeview">
   					<a href="#" class="nav-link">
   						<i class="nav-icon fas fa-copy"></i>
   						<p>
@@ -94,17 +110,22 @@
   								<i class="far fa-circle nav-icon"></i>
   								<p>Create-sales</p>
   							</a>
-  						</li>
-  						<li class="nav-item">
+						  </li>';
+}
+if($_SESSION["profile"] == "administrator"){
+
+  			echo '			<li class="nav-item">
   							<a href="reports" class="nav-link">
   								<i class="far fa-circle nav-icon"></i>
   								<p>Sales-report</p>
   							</a>
-  						</li>
+						  </li>';
+					}
   						
-  					</ul>
-  				</li>
-
+  					echo'</ul>
+  				</li>';
+				
+				?>
   			</ul>
   		</nav>
   		<!-- /.sidebar-menu -->

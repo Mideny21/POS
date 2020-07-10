@@ -40,14 +40,20 @@ class ProductsTable{
                 $stock = "<button class='btn btn-success'>" . $products[$i]["stock"] . "</button>";
 
             }
+            
+            if(isset($_GET["hiddenprofile"]) && $_GET["hiddenprofile"] == "special"){
+                 // FOR TRIGGERING BUTTONS
+            $button = " <div class='btn-group'><button class='btn btn-warning btnEditProduct' idProduct='".$products[$i]["id"]. "' data-toggle='modal' data-target='#modalEditproduct'><i class='fas fa-edit'></i></button></div>";
 
+            }else{
             // FOR TRIGGERING BUTTONS
-            $button = " <div class='btn-group'></div><button class='btn btn-warning btnEditProduct' idProduct='".$products[$i]["id"]. "' data-toggle='modal' data-target='#modalEditproduct'><i class='fas fa-edit'></i></button><button class='btn btn-danger btnDeleteProduct' idProduct='" . $products[$i]["id"] . "' code='". $products[$i]["code"]."' image='" . $products[$i]["image"]."'><i class='fas fa-times'></i></button>";
+            $button = " <div class='btn-group'><button class='btn btn-warning btnEditProduct' idProduct='".$products[$i]["id"]. "' data-toggle='modal' data-target='#modalEditproduct'><i class='fas fa-edit'></i></button><button class='btn btn-danger btnDeleteProduct' idProduct='" . $products[$i]["id"] . "' code='". $products[$i]["code"]."' image='" . $products[$i]["image"]."'><i class='fas fa-times'></i></button></div>";
 
+            }
+           
 
        $jasonData .= '[
       "'.($i+1).'",
-      "'.$image.'",
       "'.$products[$i]["code"]. '",
       "' . $products[$i]["description"] . '",
       "' . $stock . '",

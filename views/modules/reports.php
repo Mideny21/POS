@@ -1,6 +1,6 @@
 <?php
 
-if($_SESSION["profile"] == "Special" || $_SESSION["profile"] == "Seller"){
+if($_SESSION["profile"] == "special" || $_SESSION["profile"] == "seller"){
 
   echo '<script>
 
@@ -14,30 +14,28 @@ if($_SESSION["profile"] == "Special" || $_SESSION["profile"] == "Seller"){
 
 ?>
 <div class="content-wrapper">
-
-  <section class="content-header">
-    
-    <h1>
-      
-      Sales report
-    
-    </h1>
-
-    <ol class="breadcrumb">
-      
-      <li><a href="home"><i class="fa fa-dashboard"></i> Home</a></li>
-      
-      <li class="active">Sales report</li>
-    
-    </ol>
-
-  </section>
-
+ <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Sales report</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="home">Home</a></li>
+             
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
   <section class="content">
 
-    <div class="box">
+    <div class="card">
 
-      <div class="box-header with-border">
+      <div class="card-header with-border">
 
         <div class="input-group">
 
@@ -53,7 +51,7 @@ if($_SESSION["profile"] == "Special" || $_SESSION["profile"] == "Seller"){
 
         </div>
 
-        <div class="box-tools pull-right">
+        <div class="card-tools pull-right">
 
         <?php
 
@@ -77,7 +75,7 @@ if($_SESSION["profile"] == "Special" || $_SESSION["profile"] == "Seller"){
          
       </div>
 
-      <div class="box-body">
+      <div class="card-body">
         
         <div class="row">
 
