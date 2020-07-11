@@ -198,7 +198,7 @@
                                     </div>
                                   </div>
                                   
-                                  <input type="number" class="form-control" name="newTaxSale" id="newTaxSale" placeholder="0" min="0" required>
+                                  <input type="number" class="form-control" name="newTaxSale" id="newTaxSale" placeholder="0" min="0" readonly>
 
                                   <input type="hidden" name="newTaxPrice" id="newTaxPrice" required>
 

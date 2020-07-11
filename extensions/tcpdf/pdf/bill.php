@@ -70,10 +70,14 @@ $block1 = <<<EOF
 				<div style="font-size:8.5px; text-align:right; line-height:15px;">
 					
 					<br>
-					NIT: 71.759.963-9
+					P.O Box 72107, Dar es salaam
 
 					<br>
-					ADDRESS: Calle 44B 92-11
+					Vijibweni kibene street
+					
+					<br>
+					Kigamboni District
+
 
 				</div>
 
@@ -84,10 +88,10 @@ $block1 = <<<EOF
 				<div style="font-size:8.5px; text-align:right; line-height:15px;">
 					
 					<br>
-					CELLPHONE: 300 786 52 49
+					CELLPHONE: +255683492737
 					
 					<br>
-					sales@inventorysystem.com
+					traikcompany@gmail.com
 
 				</div>
 				
@@ -177,7 +181,7 @@ $block3 = <<<EOF
 		
 		<td style="border: 1px solid #666; background-color:white; width:260px; text-align:center">Product</td>
 		<td style="border: 1px solid #666; background-color:white; width:80px; text-align:center">quantity</td>
-		<td style="border: 1px solid #666; background-color:white; width:100px; text-align:center">value Unit.</td>
+		<td style="border: 1px solid #666; background-color:white; width:100px; text-align:center">value per Unit</td>
 		<td style="border: 1px solid #666; background-color:white; width:100px; text-align:center">value Total</td>
 
 		</tr>
@@ -257,7 +261,7 @@ $block5 = <<<EOF
 			<td style="border-right: 1px solid #666; color:#333; background-color:white; width:340px; text-align:center"></td>
 
 			<td style="border: 1px solid #666;  background-color:white; width:100px; text-align:center">
-				Net:
+				Total:
 			</td>
 
 			<td style="border: 1px solid #666; color:#333; background-color:white; width:100px; text-align:center">
@@ -266,33 +270,7 @@ $block5 = <<<EOF
 
 		</tr>
 
-		<tr>
-
-			<td style="border-right: 1px solid #666; color:#333; background-color:white; width:340px; text-align:center"></td>
-
-			<td style="border: 1px solid #666; background-color:white; width:100px; text-align:center">
-				Tax:
-			</td>
-		
-			<td style="border: 1px solid #666; color:#333; background-color:white; width:100px; text-align:center">
-				Tsh $tax
-			</td>
-
-		</tr>
-
-		<tr>
-		
-			<td style="border-right: 1px solid #666; color:#333; background-color:white; width:340px; text-align:center"></td>
-
-			<td style="border: 1px solid #666; background-color:white; width:100px; text-align:center">
-				Total:
-			</td>
-			
-			<td style="border: 1px solid #666; color:#333; background-color:white; width:100px; text-align:center">
-				Tsh $totalPrice
-			</td>
-
-		</tr>
+	
 
 
 	</table>
