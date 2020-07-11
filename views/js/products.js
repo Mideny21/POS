@@ -199,15 +199,11 @@ $(".tablesData tbody").on("click", "button.btnDeleteProduct", function () {
     var image = $(this).attr("image");
 
     swal({
-
-        title: '¿Are you sure you want to delete the product?',
-        text: "¡If you're not sure you can cancel this action!",
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        cancelButtonText: 'Cancel',
-        confirmButtonText: 'Yes, delete product!'
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
     }).then(function (result) {
         if (result) {
 

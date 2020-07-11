@@ -30,7 +30,7 @@ class ControllerCustomers{
 			   	if($answer == "ok"){
 
 					echo'<script>
-
+         
 					swal({
                         title: "Good job!",
                         text: "The customers have been created",
@@ -42,6 +42,7 @@ class ControllerCustomers{
 
 									}
 								})
+							
 
 					</script>';
 
@@ -51,9 +52,10 @@ class ControllerCustomers{
 
 				echo'<script>
 
+				
 					swal({
-						  type: "error",
-						  title: "¡Customer cannot be blank or especial characters!",
+						  icon: "error",
+						  title: "Customer cannot be blank or especial characters!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Close"
 						  }).then(function(result){
@@ -63,6 +65,7 @@ class ControllerCustomers{
 
 							}
 						})
+					
 
 			  	</script>';
 
@@ -115,7 +118,7 @@ class ControllerCustomers{
 			   	if($answer == "ok"){
 
 					echo'<script>
-
+      
 					swal({
                         title: "Good job!",
                         text: "The customers has been edited",
@@ -127,6 +130,7 @@ class ControllerCustomers{
 
 									}
 								})
+							
 
 					</script>';
 
@@ -135,10 +139,10 @@ class ControllerCustomers{
 			}else{
 
 				echo'<script>
-
+				
 					swal({
-						  type: "error",
-						  title: "¡Customer cannot be blank or especial characters!",
+						  icon: "error",
+						  title: "Customer cannot be blank or especial characters!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Close"
 						  }).then(function(result){
@@ -148,6 +152,7 @@ class ControllerCustomers{
 
 							}
 						})
+					
 
 			  	</script>';
 
@@ -175,7 +180,7 @@ class ControllerCustomers{
 			if($answer == "ok"){
 
 				echo'<script>
-
+    
 				swal({
                     title: "Good job!",
                     text: "The customers has been deleted",
@@ -187,6 +192,7 @@ class ControllerCustomers{
 
 								}
 							})
+						
 
 				</script>';
 

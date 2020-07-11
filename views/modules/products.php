@@ -27,7 +27,7 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-    <hr>
+  
     
   <section class="content">
 
@@ -248,7 +248,7 @@
             </div>
 
             <!-- input image -->
-            <div class="form-group">
+            <!-- <div class="form-group">
 
               <div class="panel">Upload image</div>
 
@@ -258,7 +258,7 @@
 
               <img src="views/img/products/default/anonymous.png" class="img-thumbnail preview" alt="" width="100px">
 
-            </div>
+            </div> -->
 
           </div>
 
@@ -441,7 +441,7 @@ EDIT PRODUCT
             </div>
 
             <!-- INPUT TO UPLOAD IMAGE -->
-             <div class="form-group">
+             <!-- <div class="form-group">
               
               <div class="panel">Upload Image</div>
 
@@ -453,7 +453,7 @@ EDIT PRODUCT
 
               <input type="hidden" name="currentImage" id="currentImage">
 
-            </div>
+            </div> -->
 
           </div>
 

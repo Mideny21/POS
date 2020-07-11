@@ -113,8 +113,13 @@
                     
                     <div class="form-group">
 
-                      <div class="input-group">
-                        
+                          <div class="input-group">
+                      <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                  </div>
+                </div>
+
                        
                         <select class="form-control p-1" name="selectCustomer" id="selectCustomer" required>
                           
@@ -136,7 +141,7 @@
 
                         </select>
 
-                        <span class="input-group-addon"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCustomer" data-dismiss="modal">Add Customer</button></span>
+                        <span class="input-group-append"><button type="button" class="btn btn-primary p-1" data-toggle="modal" data-target="#addCustomer" data-dismiss="modal">Add Customer</button></span>
 
                       </div>
 

@@ -107,7 +107,7 @@ class ProductController{
                 if ($answer == "ok") {
 
                     echo '<script>
-
+			
 						swal({
 							title: "Good job!",
 							text: "You have successfully added a product",
@@ -119,25 +119,27 @@ class ProductController{
 
 										}
 									})
+								
 
 						</script>';
                 }
             } else {
 
                 echo '<script>
-
+				
 					swal({
-						  type: "error",
-						  title: "¡El Product no puede ir con los campos vacíos o llevar caracteres especiales!",
+						  icon: "error",
+						  title: "No special characters",
 						  showConfirmButton: true,
 						  confirmButtonText: "Close"
 						  }).then(function(result){
-							if (result.value) {
+							if (result) {
 
 							window.location = "products";
 
 							}
 						})
+					
 
 			  	</script>';
             }
@@ -253,17 +255,17 @@ class ProductController{
 					echo'<script>
 
 						swal({
-							  type: "success",
-							  title: "The product has been edited",
-							  showConfirmButton: true,
-							  confirmButtonText: "Close"
+							title: "Good job!",
+					text: "The product has been edited",
+					icon: "success",
 							  }).then(function(result){
-										if (result.value) {
+										if (result) {
 
 										window.location = "products";
 
 										}
 									})
+								
 
 						</script>';
 
@@ -273,19 +275,20 @@ class ProductController{
 			}else{
 
 				echo'<script>
-
+    
 					swal({
-						  type: "error",
-						  title: "¡The Product cannot be empty or have special characters!",
+						  icon: "error",
+						  title: "The Product cannot be empty or have special characters!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Close"
 						  }).then(function(result){
-							if (result.value) {
+							if (result) {
 
 							window.location = "products";
 
 							}
 						})
+					
 
 			  	</script>';
 			}
@@ -316,19 +319,19 @@ class ProductController{
 			if($answer == "ok"){
 
 				echo'<script>
-
+    
 				swal({
-					  type: "success",
-					  title: "The Product has been successfully deleted",
-					  showConfirmButton: true,
-					  confirmButtonText: "Close"
+					title: "Good job!",
+					text: "The Product has been successfully deleted",
+					icon: "success",
 					  }).then(function(result){
-								if (result.value) {
+								if (result) {
 
 								window.location = "products";
 
 								}
 							})
+						
 
 				</script>';
 

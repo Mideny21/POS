@@ -22,20 +22,21 @@
 				if($answer == 'ok'){
 
 					echo '<script>
+
 						
 						swal({
-							type: "success",
-							title: "Category has been successfully saved ",
-							showConfirmButton: true,
-							confirmButtonText: "Close"
+							title: "Good job!",
+							text: "The category has been saved",
+							icon: "success",
 
 							}).then(function(result){
-								if (result.value) {
+								if (result) {
 
 									window.location = "categories";
 
 								}
 							});
+						
 						
 					</script>';
 				}
@@ -44,19 +45,21 @@
 			}else{
 
 				echo '<script>
+
 						
 						swal({
-							type: "error",
+							icon: "error",
 							title: "No especial characters or blank fields",
 							showConfirmButton: true,
 							confirmButtonText: "Close"
 				
 							 }).then(function(result){
 
-								if (result.value) {
+								if (result) {
 									window.location = "categories";
 								}
 							});
+						
 						
 				</script>';
 				
@@ -99,18 +102,20 @@
 
 					echo'<script>
 
-					swal({
-						  type: "success",
-						  title: "Category has been successfully saved ",
-						  showConfirmButton: true,
-						  confirmButtonText: "Close"
-						  }).then(function(result){
-									if (result.value) {
+				
+						swal({
+							title: "Good job!",
+							text: "The category has been saved",
+							icon: "success",
+
+							}).then(function(result){
+								if (result) {
 
 									window.location = "categories";
 
-									}
-								})
+								}
+							});
+						
 
 					</script>';
 
@@ -121,18 +126,20 @@
 
 				echo'<script>
 
+					
 					swal({
-						  type: "error",
+						  icon: "error",
 						  title: "No especial characters or blank fields",
 						  showConfirmButton: true,
 						  confirmButtonText: "Close"
 						  }).then(function(result){
-							if (result.value) {
+							if (result) {
 
 							window.location = "categories";
 
 							}
 						})
+					
 
 			  	</script>';
 
@@ -160,18 +167,19 @@
 
 				echo'<script>
 
+				
 					swal({
-						  type: "success",
-						  title: "The category has been successfully deleted",
-						  showConfirmButton: true,
-						  confirmButtonText: "Close"
+						  icon: "success",
+						  text: "The category has been successfully deleted",
+						  title: "Good job",
 						  }).then(function(result){
-									if (result.value) {
+									if (result) {
 
 									window.location = "categories";
 
 									}
 								})
+							
 
 					</script>';
 			}

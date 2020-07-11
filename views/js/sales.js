@@ -647,15 +647,13 @@ $(".tables").on("click", ".btnDeleteSale", function () {
 
     var idSale = $(this).attr("idSale");
 
+
     swal({
-        title: '¿Are you sure you want to delete the sale?',
-        text: "If you're not you can cancel!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        cancelButtonText: 'Cancel',
-        confirmButtonText: 'Yes, delete sale!'
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
     }).then(function (result) {
         if (result) {
 
@@ -663,6 +661,7 @@ $(".tables").on("click", ".btnDeleteSale", function () {
         }
 
     })
+
 
 })
 

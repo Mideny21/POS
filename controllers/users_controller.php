@@ -181,6 +181,7 @@ class ControllerUsers{
 							}
 
 						});
+					
 						
 						</script>';
 
@@ -189,9 +190,10 @@ class ControllerUsers{
 			}else{
 
 				echo '<script>
+
 					
 					swal({
-						type: "error",
+						icon: "error",
 						title: "No especial characters or blank fields",
 						showConfirmButton: true,
 						confirmButtonText: "Close"
@@ -204,6 +206,7 @@ class ControllerUsers{
 							}
 
 						});
+					
 					
 				</script>';
 			}
@@ -324,7 +327,7 @@ class ControllerUsers{
 						echo '<script>
 					
 							swal({
-								type: "error",
+								icon: "error",
 								title: "No especial characters in the password or blank fields",
 								showConfirmButton: true,
 								confirmButtonText: "Close"
@@ -337,6 +340,7 @@ class ControllerUsers{
 
 									}
 								});
+							
 							
 						</script>';
 					}
@@ -358,27 +362,30 @@ class ControllerUsers{
 				if ($answer == 'ok') {
 					
 					echo '<script>
+
 					
 						swal({
 							title: "Good job!",
-							text: "You clicked the button!",
+							text: "You have successfully edited the user",
 							icon: "success",
 							}).then(function(result){
 							
-							if (result.value) {
+							if (result) {
 
 								window.location = "users";
 							}
 
 						});
 					
+					
 					</script>';
 				}
 				else{
 					echo '<script>
+
 						
 						swal({
-							type: "error",
+							icon: "error",
 							title: "No especial characters in the name or blank field",
 							showConfirmButton: true,
 							confirmButtonText: "Close"
@@ -391,6 +398,7 @@ class ControllerUsers{
 								}
 
 							});
+						
 						
 					</script>';
 				}
@@ -424,9 +432,10 @@ class ControllerUsers{
 			if($answer == "ok"){
 
 				echo '<script>
+				
 					swal({
 					title: "Good job!",
-					text: "You clicked the button!",
+					text: "User have been successfully deleted",
 					icon: "success",
 					}).then(function(result){
 					  	
@@ -436,6 +445,7 @@ class ControllerUsers{
 
 						}
 					})
+				
 
 				</script>';
 

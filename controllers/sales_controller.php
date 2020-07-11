@@ -276,12 +276,12 @@ class ControllerSales{
 				echo'<script>
 
 				localStorage.removeItem("range");
+					
 
 				swal({
 					  icon: "success",
-					  title: "The sale has been edited correctly",
-					  showConfirmButton: true,
-					  confirmButtonText: "Close"
+					  text: "The sale has been edited correctly",
+					  title: "Good job!",
 					  }).then((result) => {
 								if (result) {
 
@@ -420,13 +420,13 @@ class ControllerSales{
 			if($answer == "ok"){
 
 				echo'<script>
+			
 
 				swal({
-					  type: "success",
-					  title: "The sale has been deleted succesfully",
-					  showConfirmButton: true,
-					  confirmButtonText: "Close",
-					  closeOnConfirm: false
+					
+					  icon: "success",
+					  text: "The sale has been deleted succesfully",
+					  title: "Good job!",
 					  }).then((result) => {
 								if (result) {
 

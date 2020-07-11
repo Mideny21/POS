@@ -2,7 +2,7 @@
 EDIT CATEGORY
 =============================================*/
 
-$(".tables").on("click", ".btnEditCategory", function(){
+$(".tables").on("click", ".btnEditCategory", function () {
 
 	var idCategory = $(this).attr("idCategory");
 
@@ -12,19 +12,19 @@ $(".tables").on("click", ".btnEditCategory", function(){
 	$.ajax({
 		url: "ajax/categories.ajax.php",
 		method: "POST",
-      	data: datum,
-      	cache: false,
-     	contentType: false,
-     	processData: false,
-     	dataType:"json",
-     	success: function(answer){
-     		
-     		// console.log("answer", answer);
+		data: datum,
+		cache: false,
+		contentType: false,
+		processData: false,
+		dataType: "json",
+		success: function (answer) {
 
-     		$("#editCategory").val(answer["Category"]);
-     		$("#idCategory").val(answer["id"]);
+			// console.log("answer", answer);
 
-     	}
+			$("#editCategory").val(answer["Category"]);
+			$("#idCategory").val(answer["id"]);
+
+		}
 
 	})
 
@@ -33,24 +33,24 @@ $(".tables").on("click", ".btnEditCategory", function(){
 /*=============================================
 DELETE CATEGORY
 =============================================*/
-$(".tables").on("click", ".btnDeleteCategory", function(){
+$(".tables").on("click", ".btnDeleteCategory", function () {
 
-	 var idCategory = $(this).attr("idCategory");
+	var idCategory = $(this).attr("idCategory");
 
-	 swal({
-	 	 title: "Are you sure?",
-	 	 	text: "Once deleted, you will not be able to recover",
-	 	 	icon: "warning",
-	 	 	buttons: true,
-	 	 	dangerMode: true,
-	 }).then(function(result){
+	swal({
+		title: "Are you sure?",
+		text: "Once deleted, you will not be able to recover",
+		icon: "warning",
+		buttons: true,
+		dangerMode: true,
+	}).then(function (result) {
 
-	 	if(result){
+		if (result) {
 
-	 		window.location = "index.php?route=categories&idCategory="+idCategory;
+			window.location = "index.php?route=categories&idCategory=" + idCategory;
 
-	 	}
+		}
 
-	 })
+	})
 
 })
