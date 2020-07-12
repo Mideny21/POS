@@ -6,7 +6,8 @@ $('.salesTable').DataTable({
     "ajax": "ajax/datatable-sales_ajax.php",
     "deferRender": true,
     "retrieve": true,
-    "processing": true
+    "processing": true,
+    "responsive": true,
 });
 
 /*=============================================

@@ -19,9 +19,9 @@ products MÁS VENDIDOS
 
 <div class="card card-danger">
 	
-	<div class="card-header with-bvalue">
+	<div class="card-header">
   
-      <h3 class="card-title">Bestselling products</h3>
+      <h3 class="card-title">Best-selling products</h3>
 
     </div>
 
@@ -29,24 +29,24 @@ products MÁS VENDIDOS
     
       	<div class="row">
 
-	        <div class="col-md-7">
+	        <!-- <div class="col-md-7">
 
 	 			<canvas id="pieChart"
                     style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
 
-	        </div>
+	        </div> -->
 
-		    <div class="col-md-5">
+		    <div class="col-md-12">
 		      	
-		  	 	<ul class="chart-legend clearfix">
+		  	 	<ul class="list-group">
 
 		  	 		 <?php
 
           	for($i = 0; $i <5; $i++){
 			
-          		echo '<li>
+          		echo '<li class="list-group-item">
 						 
-						 <a>
+						 
 
 						
 						 '.$products[$i]["description"].'
@@ -55,7 +55,7 @@ products MÁS VENDIDOS
 						 ' .ceil($products[$i]["sales"]*100/$salesTotal["total"]).'%
 						 </span>
 							
-						 </a>
+						
 
       				</li>';
 
@@ -72,11 +72,12 @@ products MÁS VENDIDOS
 
     </div>
 
-    <div class="card-footer">
-    	
-	
+    
+  <div class="card-footer text-center">
 
-    </div>
+    <a href="products" class="uppercase">See all products</a>
+  
+  </div>
 
 </div>
 

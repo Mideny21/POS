@@ -48,7 +48,7 @@ if($_SESSION["profile"] == "administrator"){
   				</li>
   				<li class="nav-item">
   					<a href="users" class="nav-link">
-  						<i class="fas fa-user"></i>
+  						<i class="nav-icon fa fa-user"></i>
   						<p>
   							Users
   						</p>
@@ -60,7 +60,7 @@ if($_SESSION["profile"] == "administrator" || $_SESSION["profile"] == "special")
 				  echo'
 				   	<li class="nav-item">
   					<a href="categories" class="nav-link">
-  						<i class="fa fa-th"></i>
+  						<i class="nav-icon fa fa-th"></i>
   						<p>
   							categories
   						</p>
@@ -68,7 +68,7 @@ if($_SESSION["profile"] == "administrator" || $_SESSION["profile"] == "special")
   				</li>
   				<li class="nav-item">
   					<a href="products" class="nav-link">
-  						<i class="fa fa-product-hunt"></i>
+  						<i class="nav-icon fab fa-product-hunt"></i>
   						<p>
   							Product
   						</p>
@@ -80,7 +80,7 @@ if($_SESSION["profile"] == "administrator" || $_SESSION["profile"] == "seller"){
 
 			echo '	  <li class="nav-item">
   					<a href="customers" class="nav-link">
-  						<i class="fas fa-users"></i>
+  						<i class="nav-icon fa fa-users"></i>
   						<p>
   							Customers
   						</p>

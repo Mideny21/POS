@@ -323,9 +323,10 @@
 
             </div>
 
-            <div class="card-footer">
-              <button type="submit" class="btn btn-primary pull-right">Save changes</button>
+            <div class="card-footer text-center">
+              <button type="submit" class="btn btn-primary">Save changes</button>
             </div>
+            
           </form>
 
           <?php

@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Sales Management</h1>
+            <h1 class="m-0 text-dark">Create sale</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -163,9 +163,9 @@
                     =            ADD PRODUCT BUTTON          =
                     ======================================-->
                     
-                    <button type="button" class="btn btn-default hidden-lg btnAddProduct">Add Product</button>
+                    <!-- <button type="button" class="btn btn-default hidden-md btnAddProduct">Add Product</button>
 
-                    <hr>
+                    <hr> -->
 
                     <div class="row">
 
@@ -274,9 +274,10 @@
 
             </div>
 
-            <div class="card-footer">
-              <button type="submit" class="btn btn-primary pull-right">Save sale</button>
+            <div class="card-footer text-center">
+              <button type="submit" class="btn btn-primary">Create sale</button>
             </div>
+
           </form>
 
        <?php
@@ -296,7 +297,7 @@
       =============================================-->
 
 
-      <div class="col-lg-7 hidden-md hidden-sm hidden-xs">
+      <div class="col-lg-7">
         
           <div class="card card-warning">
             
@@ -304,7 +305,7 @@
 
             <div class="card-body">
               
-              <table class="table table-bordered table-striped dt-responsive salesTable width="100%"">
+              <table class="table table-bordered table-striped dt-responsive salesTable width="100%" ">
                   
                 <thead>
 
