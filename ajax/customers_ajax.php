@@ -1,7 +1,7 @@
 <?php
 
-require_once "../controllers/customers.controller.php";
-require_once "../models/customers.model.php";
+require_once "../controllers/customers_controller.php";
+require_once "../models/customers_model.php";
 
 class AjaxCustomers{
 

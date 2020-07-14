@@ -167,9 +167,10 @@
 
             <!--Input name -->
             <div class="form-group">
+              <label for="">Name:</label>
 
               <div class="input-group">
-                <div class="input-group-append">
+                <div class="input-group-prepend">
                   <div class="input-group-text">
                     <span class="fas fa-user"></span>
                   </div>
@@ -182,10 +183,10 @@
 
             <!-- input username -->
             <div class="form-group">
-
+               <label for="">Username:</label>
               <div class="input-group">
 
-                <div class="input-group-append">
+                <div class="input-group-prepend">
                   <div class="input-group-text">
                     <span class="fas fa-user"></span>
                   </div>
@@ -199,10 +200,10 @@
 
             <!-- input password -->
             <div class="form-group">
-
+                 <label for="">Password:</label>
               <div class="input-group">
 
-                <div class="input-group-append">
+                <div class="input-group-prepend">
                   <div class="input-group-text">
                     <span class="fas fa-lock"></span>
                   </div>
@@ -216,10 +217,10 @@
 
             <!-- input profile -->
             <div class="form-group">
-
+                 <label for="">Profile:</label>
               <div class="input-group">
 
-                <div class="input-group-append">
+                <div class="input-group-prepend">
                   <div class="input-group-text">
                     <span class="fas fa-key"></span>
                   </div>
@@ -295,16 +296,15 @@
 
       <form role="form" method="POST" enctype="multipart/form-data">
 
-        <!--=====================================
+         <!--=====================================
         HEADER
         ======================================-->
 
-        <div class="modal-header" style="background: #3c8dbc; color: #fff">
-
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-          <h4 class="modal-title">Edit user</h4>
-
+        <div class="modal-header" style="background:#3c8dbc">
+          <h5 class="modal-title" style="color:#fff" id="exampleModalLabel">Edit User</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
 
         <!--=====================================
@@ -318,9 +318,14 @@
             <!--Input name -->
             <div class="form-group">
 
-              <div class="input-group">
+             <label for="">Name:</label>
 
-                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                  </div>
+                </div>
 
                 <input class="form-control input-lg" type="text" id="EditName" name="EditName" placeholder="Edit name" required>
 
@@ -331,9 +336,15 @@
             <!-- input username -->
             <div class="form-group">
 
+              <label for="">Username:</label>
               <div class="input-group">
 
-                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                  </div>
+                </div>
+
 
                 <input class="form-control input-lg" type="text" id="EditUser" name="EditUser" placeholder="Edit username" readonly>
 
@@ -344,9 +355,14 @@
             <!-- input password -->
             <div class="form-group">
 
+                <label for="">Password:</label>
               <div class="input-group">
 
-                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <span class="fas fa-lock"></span>
+                  </div>
+                </div>
 
                 <input class="form-control input-lg" type="password" name="EditPasswd" placeholder="Add new password">
 
@@ -359,9 +375,15 @@
             <!-- input profile -->
             <div class="form-group">
 
+        <label for="">Profile:</label>
               <div class="input-group">
 
-                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <span class="fas fa-key"></span>
+                  </div>
+                </div>
+
 
                 <select class="form-control input-lg" name="EditProfile">
 

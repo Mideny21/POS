@@ -36,7 +36,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header with-border">
-          <button class="btn btn-primary" data-toggle="modal" data-target="#addCategories">Add Categories</button>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#addCategories">Add Category</button>
 
         </div>
         <div class="card-body">
@@ -122,7 +122,7 @@
 
         
         <div class="modal-header" style="background:#3c8dbc">
-          <h5 class="modal-title" style="color:#fff" id="exampleModalLabel">Add Categories</h5>
+          <h5 class="modal-title" style="color:#fff" id="exampleModalLabel">Add Category</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -134,8 +134,9 @@
 
             <!--Input name -->
             <div class="form-group">
+              <label for="">Add category:</label>
               <div class="input-group">
-              <div class="input-group-append">
+              <div class="input-group-prepend">
               <div class="input-group-text">
                <span class="fa fa-th"></span>
               </div>
@@ -175,18 +176,32 @@
     <!-- Modal content-->
     <div class="modal-content">
       <form role="form" method="POST">
-        <div class="modal-header" style="background: #3c8dbc; color: #fff">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Edit Categories</h4>
+
+        <!--=====================================
+        MODAL HEADER
+        ======================================-->
+
+        
+        <div class="modal-header" style="background:#3c8dbc">
+          <h5 class="modal-title" style="color:#fff" id="exampleModalLabel">Edit Category</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
         <div class="modal-body">
           <div class="box-body">
 
             <!--Input name -->
             <div class="form-group">
+             <label for="">Edit category:</label>
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-th"></i></span>
-                <input class="form-control input-lg" type="text" id="editCategory" name="editCategory" required>
+              <div class="input-group-prepend">
+              <div class="input-group-text">
+               <span class="fa fa-th"></span>
+              </div>
+              </div>
+
+                <input class="form-control" type="text" id="editCategory" name="editCategory" required>
                 <input type="hidden" name="idCategory" id="idCategory" required>
               </div>
             </div>

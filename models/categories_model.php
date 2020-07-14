@@ -68,9 +68,9 @@ class CategoriesModel{
 
 	static public function mdlEditCategory($table, $data){
 
-		$stmt = Connection::connect()->prepare("UPDATE $table SET Category = :Category WHERE id = :id");
+		$stmt = Connection::connect()->prepare("UPDATE $table SET category = :category WHERE id = :id");
 
-		$stmt -> bindParam(":Category", $data["Category"], PDO::PARAM_STR);
+		$stmt -> bindParam(":category", $data["category"], PDO::PARAM_STR);
 		$stmt -> bindParam(":id", $data["id"], PDO::PARAM_INT);
 
 		if($stmt->execute()){

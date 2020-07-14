@@ -145,7 +145,7 @@ session_start();
   <!-- jQuery Knob Chart -->
   <script src="views/plugins/jquery-knob/jquery.knob.min.js"></script>
   <!-- InputMask -->
-  <script src="views/plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+<script src="views/plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
   <!-- daterangepicker -->
   <script src="views/plugins/moment/moment.min.js"></script>
   <script src="views/plugins/daterangepicker/daterangepicker.js"></script>

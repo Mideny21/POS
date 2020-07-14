@@ -103,14 +103,14 @@
 
         <div class="modal-body">
 
-          <div class="card-body">
+          <div class="box-body">
 
 
             <!-- input category -->
             <div class="form-group">
-
+<label for="">Category:</label>
               <div class="input-group">
-                <div class="input-group-append">
+                <div class="input-group-prepend">
                   <div class="input-group-text">
                     <span class="fas fa-th"></span>
                   </div>
@@ -141,9 +141,9 @@
 
             <!--Input Code -->
             <div class="form-group">
-
+<label for="">Code:</label>
               <div class="input-group">
-                <div class="input-group-append">
+                <div class="input-group-prepend">
                   <div class="input-group-text">
                     <span class="fas fa-code"></span>
                   </div>
@@ -157,9 +157,9 @@
 
             <!-- input description -->
             <div class="form-group">
-
+<label for="">Description:</label>
               <div class="input-group">
-                <div class="input-group-append">
+                <div class="input-group-prepend">
                   <div class="input-group-text">
                     <span class="fas fa-th"></span>
                   </div>
@@ -174,9 +174,9 @@
 
             <!-- input Stock -->
             <div class="form-group">
-
+<label for="">Stock:</label>
               <div class="input-group">
-                <div class="input-group-append">
+                <div class="input-group-prepend">
                   <div class="input-group-text">
                     <span class="fas fa-check"></span>
                   </div>
@@ -234,10 +234,14 @@
                 <div class="col-xs-6" style="padding:0">
 
                   <div class="input-group">
+                     <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <span class="fa fa-percent"></span>
+                  </div>
+                </div>
 
                     <input type="number" class="form-control input-lg newPercentage" min="0" value="40" required>
 
-                    <span class="input-group-addon"><i class="fa fa-percent"></i></span>
 
                   </div>
 

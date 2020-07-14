@@ -14,9 +14,9 @@ class AjaxCategories{
 	public function ajaxEditCategory(){
 
 		$item = "id";
-		$valor = $this->idCategory;
+		$value = $this->idCategory;
 
-		$answer = ControllerCategories::ctrShowCategories($item, $valor);
+		$answer = ControllerCategories::ctrShowCategories($item, $value);
 
 		echo json_encode($answer);
 

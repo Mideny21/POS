@@ -10,14 +10,13 @@ class ModelCustomers{
 
 	static public function mdlAddCustomer($table, $data){
 
-		$stmt = Connection::connect()->prepare("INSERT INTO $table(name, idDocument, email, phone, address, birthdate) VALUES (:name, :idDocument, :email, :phone, :address, :birthdate)");
+		$stmt = Connection::connect()->prepare("INSERT INTO $table(name,  email, phone, address) VALUES (:name, :email, :phone, :address)");
 
 		$stmt->bindParam(":name", $data["name"], PDO::PARAM_STR);
-		$stmt->bindParam(":idDocument", $data["idDocument"], PDO::PARAM_INT);
 		$stmt->bindParam(":email", $data["email"], PDO::PARAM_STR);
 		$stmt->bindParam(":phone", $data["phone"], PDO::PARAM_STR);
 		$stmt->bindParam(":address", $data["address"], PDO::PARAM_STR);
-		$stmt->bindParam(":birthdate", $data["birthdate"], PDO::PARAM_STR);
+		
 
 		if($stmt->execute()){
 
@@ -72,15 +71,15 @@ class ModelCustomers{
 
 	static public function mdlEditCustomer($table, $data){
 
-		$stmt = Connection::connect()->prepare("UPDATE $table SET name = :name, idDocument = :idDocument, email = :email, phone = :phone, address = :address, birthdate = :birthdate WHERE id = :id");
+		$stmt = Connection::connect()->prepare("UPDATE $table SET name = :name, email = :email, phone = :phone, address = :address WHERE id = :id");
 
 		$stmt->bindParam(":id", $data["id"], PDO::PARAM_INT);
 		$stmt->bindParam(":name", $data["name"], PDO::PARAM_STR);
-		$stmt->bindParam(":idDocument", $data["idDocument"], PDO::PARAM_INT);
+	
 		$stmt->bindParam(":email", $data["email"], PDO::PARAM_STR);
 		$stmt->bindParam(":phone", $data["phone"], PDO::PARAM_STR);
 		$stmt->bindParam(":address", $data["address"], PDO::PARAM_STR);
-		$stmt->bindParam(":birthdate", $data["birthdate"], PDO::PARAM_STR);
+	
 
 		if($stmt->execute()){
 

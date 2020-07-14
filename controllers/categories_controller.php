@@ -92,11 +92,11 @@
 
 				$table = "categories";
 
-				$data = array("Category"=>$_POST["editCategory"],
+				$data = array("category"=>$_POST["editCategory"],
 							   "id"=>$_POST["idCategory"]);
 
 				$answer = CategoriesModel::mdlEditCategory($table, $data);
-				// var_dump($answer);
+				
 
 				if($answer == "ok"){
 
@@ -105,7 +105,7 @@
 				
 						swal({
 							title: "Good job!",
-							text: "The category has been saved",
+							text: "The category has been edited",
 							icon: "success",
 
 							}).then(function(result){

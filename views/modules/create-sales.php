@@ -337,7 +337,6 @@
 </div>
 
 
-
 <!--=====================================
 MODAL ADD CUSTOMER
 ======================================-->
@@ -373,24 +372,25 @@ MODAL ADD CUSTOMER
              <!-- NAME INPUT -->
 
             <div class="form-group">
-              <div class="input-group">
+              <label for="">Name/Company name:</label>
 
-              <div class="input-group-append">
+              <div class="input-group">
+              <div class="input-group-prepend">
                 <div class="input-group-text">
                  <span class="fa fa-user"></span>
                 </div>
               </div>
                
-                <input class="form-control input-lg" type="text" name="newCustomer" placeholder="Write name" required>
+                <input class="form-control" type="text" name="newCustomer" placeholder="Name" required>
               </div>
             </div>
 
             <!-- I.D DOCUMENT INPUT -->
-
+<!-- 
             <div class="form-group">
               <div class="input-group">
 
-              <div class="input-group-append">
+              <div class="input-group-prepend">
                 <div class="input-group-text">
                  <span class="fa fa-key"></span>
                 </div>
@@ -398,45 +398,48 @@ MODAL ADD CUSTOMER
               
                 <input class="form-control input-lg" type="number" min="0" name="newIdDocument" placeholder="Write your ID" required>
               </div>
-            </div>
+            </div> -->
 
             <!-- EMAIL INPUT -->
 
             <div class="form-group">
+              <label for="">Email:</label>
               <div class="input-group">
 
               
-              <div class="input-group-append">
+              <div class="input-group-prepend">
                 <div class="input-group-text">
                  <span class="fa fa-envelope"></span>
                 </div>
               </div>
               
-                <input class="form-control input-lg" type="text" name="newEmail" placeholder="Email" required>
+                <input class="form-control" type="text" name="newEmail" placeholder="Email" required>
               </div>
             </div>
 
             <!-- PHONE INPUT -->
 
             <div class="form-group">
+              <label for="">Phone number:</label>
               <div class="input-group">
 
-              <div class="input-group-append">
+              <div class="input-group-prepend">
                 <div class="input-group-text">
                  <span class="fa fa-phone"></span>
                 </div>
               </div>
               
-                <input class="form-control input-lg" type="text" name="newPhone" placeholder="phone" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
+                <input class="form-control" type="text" name="newPhone" placeholder="phone" data-inputmask="'mask': ['999-999-9999 [x99999]', '+099 99 99 9999[9]-9999']" data-mask required>
               </div>
             </div>
 
             <!-- ADDRESS INPUT -->
 
             <div class="form-group">
+              <label for="">Address:</label>
               <div class="input-group">
 
-               <div class="input-group-append">
+               <div class="input-group-prepend">
                 <div class="input-group-text">
                  <span class="fa fa-map-marker"></span>
                 </div>
@@ -448,11 +451,11 @@ MODAL ADD CUSTOMER
 
 
              <!-- BIRTH DATE INPUT -->
-
+<!-- 
             <div class="form-group">
               <div class="input-group">
 
-               <div class="input-group-append">
+               <div class="input-group-prepend">
                 <div class="input-group-text">
                  <span class="fa fa-calendar"></span>
                 </div>
@@ -460,7 +463,7 @@ MODAL ADD CUSTOMER
       
                 <input class="form-control input-lg" type="text" name="newBirthdate" placeholder="Birth Date" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask required>
               </div>
-            </div>
+            </div> -->
 
           </div>
 

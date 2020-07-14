@@ -7,7 +7,8 @@
 
   <div class="login-logo">
 
-  <a href="#"><b>Traik</b>company</a>
+  <!-- <a href="#"><b>Traik</b>company</a> -->
+  <img src="views/dist/img/traik.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
 
   </div>
 </div>
@@ -36,9 +37,12 @@
 
       <div class="row">
 
-        <div class="col-xs-4">
+        <div class="col-md-12">
 
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+        <div class="card-footer text-center">
+                      <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+
+        </div>
 
         </div>
        
