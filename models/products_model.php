@@ -69,15 +69,15 @@ class ModelProducts{
 	=============================================*/
 	static public function mdlEditProduct($table, $data){
 
-		$stmt = Connection::connect()->prepare("UPDATE $table SET category_id = :idCategory, description = :description, image = :image, stock = :stock, buying_price = :buyingPrice, selling_price = :sellingPrice WHERE code = :code");
+		$stmt = Connection::connect()->prepare("UPDATE $table SET category_id = :category_id, description = :description, image = :image, stock = :stock, buying_price = :buying_price, selling_price = :selling_price WHERE code = :code");
 
-		$stmt->bindParam(":category_id", $data["idCategory"], PDO::PARAM_INT);
+		$stmt->bindParam(":category_id", $data["category_id"], PDO::PARAM_INT);
 		$stmt->bindParam(":code", $data["code"], PDO::PARAM_STR);
 		$stmt->bindParam(":description", $data["description"], PDO::PARAM_STR);
 		$stmt->bindParam(":image", $data["image"], PDO::PARAM_STR);
 		$stmt->bindParam(":stock", $data["stock"], PDO::PARAM_STR);
-		$stmt->bindParam(":buying_price", $data["buyingPrice"], PDO::PARAM_STR);
-		$stmt->bindParam(":selling_price", $data["sellingPrice"], PDO::PARAM_STR);
+		$stmt->bindParam(":buying_price", $data["buying_price"], PDO::PARAM_STR);
+		$stmt->bindParam(":selling_price", $data["selling_price"], PDO::PARAM_STR);
 
 		if($stmt->execute()){
 

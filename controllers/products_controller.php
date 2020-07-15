@@ -20,7 +20,6 @@ class ProductController{
         if (isset($_POST["newDescription"])) {
 
             if (
-                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["newDescription"]) &&
                 preg_match('/^[0-9]+$/', $_POST["newStock"]) &&
                 preg_match('/^[0-9.]+$/', $_POST["newBuyingPrice"]) &&
                 preg_match('/^[0-9.]+$/', $_POST["newSellingPrice"])
@@ -154,7 +153,7 @@ class ProductController{
 
 		if(isset($_POST["editDescription"])){
 
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editDescription"]) &&
+			if(
 			   preg_match('/^[0-9]+$/', $_POST["editStock"]) &&	
 			   preg_match('/^[0-9.]+$/', $_POST["editBuyingPrice"]) &&
 			   preg_match('/^[0-9.]+$/', $_POST["editSellingPrice"])){
@@ -240,12 +239,12 @@ class ProductController{
 
 				$table = "products";
 
-				$data = array("idCategory" => $_POST["editCategory"],
+				$data = array("category_id" => $_POST["editCategory"],
 							   "code" => $_POST["editCode"],
 							   "description" => $_POST["editDescription"],
 							   "stock" => $_POST["editStock"],
-							   "buyingPrice" => $_POST["editBuyingPrice"],
-							   "sellingPrice" => $_POST["editSellingPrice"],
+							   "buying_price" => $_POST["editBuyingPrice"],
+							   "selling_price" => $_POST["editSellingPrice"],
 							   "image" => $route);
 
 				$answer = ModelProducts::mdlEditProduct($table, $data);
@@ -305,16 +304,16 @@ class ProductController{
 		if(isset($_GET["idProduct"])){
 
 			$table ="products";
-			$datum = $_GET["idProduct"];
+			$data = $_GET["idProduct"];
 
-			if($_GET["image"] != "" && $_GET["image"] != "views/img/products/default/anonymous.png"){
+			// if($_GET["image"] != "" && $_GET["image"] != "views/img/products/default/anonymous.png"){
 
-				unlink($_GET["image"]);
-				rmdir('views/img/products/'.$_GET["code"]);
+			// 	unlink($_GET["image"]);
+			// 	rmdir('views/img/products/'.$_GET["code"]);
 
-			}
+			// }
 
-			$answer = ModelProducts::mdlDeleteProduct($table, $datum);
+			$answer = ModelProducts::mdlDeleteProduct($table, $data);
 
 			if($answer == "ok"){
 

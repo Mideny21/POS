@@ -23,7 +23,7 @@ class AjaxProducts{
  	 EDIT PRODUCT
   	=============================================*/ 
 
-  	public $idProduct;
+  public $idProduct;
 	public $getProducts;
 	public $productName;
 

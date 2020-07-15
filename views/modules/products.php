@@ -108,7 +108,7 @@
 
             <!-- input category -->
             <div class="form-group">
-<label for="">Category:</label>
+         <label for="">Category:</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -141,7 +141,7 @@
 
             <!--Input Code -->
             <div class="form-group">
-<label for="">Code:</label>
+                 <label for="">Code:</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -157,7 +157,7 @@
 
             <!-- input description -->
             <div class="form-group">
-<label for="">Description:</label>
+                   <label for="">Description:</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -174,7 +174,7 @@
 
             <!-- input Stock -->
             <div class="form-group">
-<label for="">Stock:</label>
+                  <label for="">Stock:</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -298,7 +298,7 @@
 EDIT PRODUCT
 ======================================-->
 
-<div id="modalEditProduct" class="modal fade" role="dialog">
+<div id="modalEditproduct" class="modal fade" role="dialog">
   
   <div class="modal-dialog">
 
@@ -306,16 +306,15 @@ EDIT PRODUCT
 
       <form role="form" method="post" enctype="multipart/form-data">
 
-        <!--=====================================
+       <!--=====================================
         HEADER
         ======================================-->
 
-        <div class="modal-header" style="background:#3c8dbc; color:white">
-
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-          <h4 class="modal-title">Edit product</h4>
-
+        <div class="modal-header" style="background:#3c8dbc">
+          <h5 class="modal-title" style="color:#fff" id="exampleModalLabel">Edit Product</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
 
         <!--=====================================
@@ -329,11 +328,15 @@ EDIT PRODUCT
             <!-- Select Category -->
             <div class="form-group">
               
+             <label for="">Category:</label>
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <span class="fas fa-th"></span>
+                  </div>
+                </div>
 
-                <select class="form-control input-lg" name="editCategory" readonly required>
+                <select class="form-control" name="editCategory" readonly required>
                   
                   <option id="editCategory"></option>
 
@@ -346,11 +349,15 @@ EDIT PRODUCT
             <!-- INPUT FOR THE CODE -->          
             <div class="form-group">
               
+                  <label for="">Code:</label>
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-code"></i></span> 
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <span class="fas fa-code"></span>
+                  </div>
+                </div>
 
-                <input type="text" class="form-control input-lg" id="editCode" name="editCode" readonly required>
+                <input type="text" class="form-control" id="editCode" name="editCode" readonly required>
 
               </div>
 
@@ -359,11 +366,15 @@ EDIT PRODUCT
             <!-- INPUT FOR THE DESCRIPTION -->
              <div class="form-group">
               
+                    <label for="">Description:</label>
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-product-hunt"></i></span> 
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <span class="fas fa-th"></span>
+                  </div>
+                </div>
 
-                <input type="text" class="form-control input-lg" id="editDescription" name="editDescription" required>
+                <input type="text" class="form-control" id="editDescription" name="editDescription" required>
 
               </div>
 
@@ -372,11 +383,14 @@ EDIT PRODUCT
              <!-- INPUT FOR THE STOCK -->
              <div class="form-group">
               
+                 <label for="">Stock:</label>
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-check"></i></span> 
-
-                <input type="number" class="form-control input-lg" id="editStock" name="editStock" min="0" required>
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <span class="fas fa-check"></span>
+                  </div>
+                </div>
+                <input type="number" class="form-control" id="editStock" name="editStock" min="0" required>
 
               </div>
 
@@ -389,9 +403,8 @@ EDIT PRODUCT
                 
                   <div class="input-group">
                   
-                    <span class="input-group-addon"><i class="fa fa-arrow-up"></i></span> 
-
-                    <input type="number" class="form-control input-lg" id="editBuyingPrice" name="editBuyingPrice" step="any" min="0" required>
+                     
+                    <input type="number" class="form-control" id="editBuyingPrice" name="editBuyingPrice" step="any" min="0" required>
 
                   </div>
 
@@ -402,9 +415,9 @@ EDIT PRODUCT
                 
                   <div class="input-group">
                   
-                    <span class="input-group-addon"><i class="fa fa-arrow-down"></i></span> 
+                   
 
-                    <input type="number" class="form-control input-lg" id="editSellingPrice" name="editSellingPrice" step="any" min="0" readonly required>
+                    <input type="number" class="form-control" id="editSellingPrice" name="editSellingPrice" step="any" min="0" readonly required>
 
                   </div>
                 
@@ -429,12 +442,14 @@ EDIT PRODUCT
 
                   <!-- INPUT FOR PORCENTAJE -->
                   <div class="col-xs-6" style="padding:0">
-                    
-                    <div class="input-group">
+                     <div class="input-group">
+                     <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <span class="fa fa-percent"></span>
+                  </div>
+                </div>
                       
                       <input type="number" class="form-control input-lg newPercentage" min="0" value="40" required>
-
-                      <span class="input-group-addon"><i class="fa fa-percent"></i></span>
 
                     </div>
 
@@ -489,3 +504,10 @@ EDIT PRODUCT
   </div>
 
 </div>
+
+  <?php
+
+          $deleteProduct = new ProductController();
+          $deleteProduct -> ctrDeleteProduct();
+
+        ?>   

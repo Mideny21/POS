@@ -47,7 +47,7 @@ class ProductsTable{
 
             }else{
             // FOR TRIGGERING BUTTONS
-            $button = " <div class='btn-group'><button class='btn btn-warning btnEditProduct' idProduct='".$products[$i]["id"]. "' data-toggle='modal' data-target='#modalEditproduct'><i class='fas fa-edit'></i></button><button class='btn btn-danger btnDeleteProduct' idProduct='" . $products[$i]["id"] . "' code='". $products[$i]["code"]."' image='" . $products[$i]["image"]."'><i class='fas fa-times'></i></button></div>";
+            $button = " <div class='btn-group'><button class='btn btn-warning btnEditProduct' idProduct='".$products[$i]["id"]. "' data-toggle='modal' data-target='#modalEditproduct'><i class='fas fa-edit'></i></button><button class='btn btn-danger btnDeleteProduct' idProduct='" . $products[$i]["id"] . "' code='". $products[$i]["code"]."'><i class='fas fa-times'></i></button></div>";
 
             }
            
